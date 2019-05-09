@@ -1,0 +1,188 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Nanum Gothic', 'Noto Sans KR';
+}
+a{
+    color: black;
+    font-style: none;
+    text-decoration: none;
+    border: none;
+}
+textarea{
+    border: none;
+    resize: none;
+}
+textarea:focus{
+    border: none;
+}
+ul{
+    list-style: none;
+}
+body{
+    text-align: center;
+}
+input, textarea{
+    font-size: 15px;   
+    padding: 8px;
+}
+
+
+
+
+
+.estimateGameWrapper #scoreText{
+    font-size: 70px;
+    color: #e71469;
+}
+.estimateGameWrapper .scoreBoard #scoreStar{
+    font-size: 50px;
+    color: #f7e81d;
+    float: left;
+    display: inline-block;
+    text-align: left;
+    width: 250px;
+    height: 74px;
+}
+.estimateGameWrapper .scoreBoard .scoreChange{
+    margin-left: 30px;
+    float:left;
+    font-size: 23px;
+    display: flex;
+    flex-direction: column;
+    transform: translateY(7px);
+}
+
+.estimateGameWrapper .scoreBoard .scoreChange> *{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    color: #e71469;
+    cursor: pointer;
+}
+
+
+.toastWrapper{
+    position: fixed;
+    bottom: 20px;
+    right: 40px;
+    z-index: 99999;
+}
+.toast{
+    border-radius: 10px;
+    padding: 8px 16px 8px 16px;
+    color: white;
+    background-color: #e71469;
+}
+
+
+
+.btn{
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #e71469;
+    border: none;
+    color: white;
+    display: inline-block;
+    text-align: center;
+    padding: 5px 20px 5px 20px;
+    font-size: 15px;
+
+    transition-property: background-color;
+    transition-duration: 0.5s;
+}
+.buzz:hover{
+    animation: 0.15s infinite buzz;
+}
+.imgBtn{
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #e71469;
+    border: none;
+    color: white;
+    display: inline-block;
+    text-align: center;
+    padding: 5px;
+    font-size: 15px;
+
+    transition-property: background-color;
+    transition-duration: 0.5s;
+}
+.btn:hover, .imgBtn:hover{
+    background-color: #c60358;
+}
+
+.imgBtn > img{
+    transform: translateY(2px);
+}
+.btn-inv{
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: white;
+    border: none;
+    color: #e71469;
+    border: 1.5px solid #e71469;
+    display: inline-block;
+    text-align: center;
+    padding: 10px 20px 10px 20px;
+    font-size: 15px;
+}
+
+
+.customInputStyle{
+    background-color: transparent;
+    border: none;
+    border-bottom: 3px solid #898989;
+    padding: 8px;
+    font-size: 16px;
+    
+}
+.customInputStyle:focus{
+    border: none;
+    border-bottom: 3px solid #e71469;
+}
+
+.alignCenter{
+    text-align: center!important;
+    width: 100%;
+    display: inline-block;
+}
+
+.leftBorder{
+    border-left: 9px solid #e71469;
+    box-sizing: border-box;
+    padding-left: 8px!important; 
+
+    margin: 8px 0 8px 0;
+    font-size: 20px;
+    font-weight: 600;
+}
+.icon{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+}
+
+
+.invalidInput{
+    border: 1px solid red;
+    background-color: #FF000033;
+}
+.validInput{
+    border: 1px solid green;
+    background-color: #00FF0033;
+}
+
+.guideWrap{
+    display: inline-block;
+    min-width: 1200px;
+    width: 100%;
+    text-align: center;    
+}
+.guideLine{
+    display: inline-block;
+    width: 1000px;
+    text-align: left;
+}
+

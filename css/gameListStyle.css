@@ -1,0 +1,141 @@
+
+
+
+
+div.polaroid{
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.25);
+    box-sizing: border-box;
+
+    display: inline-block;
+    width: 31%;
+    height: 320px;
+    margin: 3% 0 3% 0;
+    text-align: center;
+    cursor: pointer;
+}
+div.polaroid:hover{
+    border: 2px solid#e71469;
+    cursor: pointer;
+}
+div.polaroid *{
+    z-index: 10;
+}
+div.polaroid .thumbnails{
+    display: inline-block;
+    width: 100%;
+    height: 200px;
+}
+
+div.polaroid .floatingScore{
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.8);
+    font-weight: 600;
+    font-size: 14px;
+    padding: 10px;
+    display:inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background-color: #e71469;
+    color: white;
+    z-index: 100;
+    transform: translate(120px, -320px);
+}
+div.polaroid img{
+    display: inline-block;
+    width: 100%;
+    height: 180px;
+}
+.polaroid .gameName{
+    margin: 0;
+    background: #000000CC;
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    padding: 8px;
+    float: left;
+    transform: translateY(-46px);
+    display: inline-block;
+    width: 100%;
+    height: 42px;
+    text-overflow: hidden;
+    overflow: hidden;
+}
+.polaroid div.buttons{
+    transform: translateY(-20px);
+
+    border-top: 1px solid #c9c9c9;
+
+    display: flex;
+    align-items: center;
+    margin: 5px;
+    padding-top: 10px;
+}
+.polaroid div.buttons .button{
+    flex: 1;
+    cursor: pointer;
+}
+
+.polaroid .texts {
+    font-size: 12px;
+    text-align: left;
+    transform: translateY(50px);
+}
+.polaroid div.texts *{
+    height: 18px;
+    transform: translateY(-70px);
+    margin: 10px 15px;
+}
+.polaroid div.texts .highlight{
+    transform: translateY(0);
+    font-size: 17px;
+    font-weight: 600;
+    color: #e71469;
+    margin: 0;
+    margin-left: 10px;
+}
+.polaroid div.texts .platform{
+    font-weight: 600;
+    height: 15px;
+    overflow: hidden;
+    text-overflow: hidden;
+}
+.polaroid div.texts .hashTags{
+    color: #787878;
+    height: 15px;
+    text-overflow: '...';
+    overflow:hidden;
+}
+.polaroid div.texts .hashTags .hashTag::before{
+    content: '#';
+}
+.polaroid div.buttons{
+}
+
+.polaroid div.buttons .button .icon{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+    background-size: cover;
+}
+.polaroid div.buttons .button .notReserved{
+    background-image: url('../res/nofill_heart.png');
+}
+.polaroid div.buttons .button .reserved{
+    background-image: url('../res/fill_heart.png');
+}
+.polaroid div.buttons .button .notEstimated{
+    background-image: url('../res/nofill_star.png');
+}
+.polaroid div.buttons .button .estimated{
+    background-image: url('../res/fill_star.png');
+}
+.polaroid div.buttons .button .community{
+    background-image: url('../res/commnunity.png');
+}
+
+.polaroid div.buttons .button .explain{
+    font-size: 12px;
+}
+

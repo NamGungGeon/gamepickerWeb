@@ -1,0 +1,341 @@
+
+
+section.initial{
+    z-index: 10;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+    color: white;
+    background-color: black;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display:inline-block;
+    position: absolute;
+    
+    height: 100%;
+    min-width: 1200px;
+    width: 100%;
+    left: 0;
+    top: 0;
+    text-align: center;
+}
+section.contents{
+    z-index: 1;
+    color: white;
+    background-color: white;
+    display:inline-block;
+    position: absolute;
+    min-width: 1200px;
+    width: 100%;
+    left: 0;
+    top: 105%;
+
+    color: #3c3c3c;
+    text-align: center;
+}
+
+
+
+section.initial{
+    text-align: center;
+    background-image: url('../res/mainbackg.jpg');
+}
+section.initial > .slogun{
+    font-weight: 600;
+    color: white;
+    width: 100%;
+    font-size: 20px;
+    position: absolute;
+    top: 80px;
+}
+section.initial >.slogun .wrap{
+    color: white;
+    font-size: 20px;
+    text-align: left;
+}
+section.initial   .wrap{
+    display: inline-block;
+    width: 100%;
+    max-width: 1000px;
+    position: relative;
+    top: 30%;
+    text-align: center;
+    z-index: -999;
+}
+section.initial .wrap >img{
+    position: relative;
+    width: 200px;
+    height: auto;
+    float: left;
+    transition-duration: 0.25s;
+    transition-property: transform, opacity;
+    box-shadow: 0 2px 50px 5px rgba(255, 255, 255, 0.5);
+    z-index: -1;
+}
+section.initial .wrap >img:hover{
+    opacity: 1!important;
+    z-index: 99999;
+    transform: scale(1.4)!important;
+    cursor: pointer;
+}
+section.initial .wrap_down{
+    position: absolute;
+    width: 100%;
+    bottom: 10px;
+    font-size: 19px;
+    z-index: -1;
+}
+section.initial  .scrollGuide{
+    float: left;
+    display: inline-block;
+    width: 50%;
+    transform: translateX(-5px);
+    text-align: left;
+}
+@keyframes shake{
+    0%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+    50%{
+        opacity: 0.7;
+        transform: translateY(-5px);
+    }
+    70%{
+        transform: translateY(5px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+.scrollGuide>img{
+    margin: 10px 0 10px 0;
+    animation: 1s infinite shake;
+    width: 50px;
+}
+.installInfo{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    max-width: 1000px;
+    float: right;
+    text-align: right;
+    z-index: 1000;
+}
+.installInfo> .bigbtn{
+    transform: translateY(50px);
+    font-weight: 600;
+    font-size: 12px;
+    padding: 10px 20px 10px 20px;
+    border: 1px solid white;
+    border-radius: 5px;
+    float: right;
+    margin-left: 15px;
+    cursor: pointer;
+    background-color: transparent;
+    transition-duration: 0.3s;
+    transition-property: border, background-color, color;
+    color: white;
+}
+
+.installInfo> .bigbtn:hover{
+    background-color: #e71469;
+}
+.installInfo> .bigbtn >svg{
+    margin-right: 7px;
+    width: 15px;
+    height: 15px;
+    transform: translateY(3px);
+    fill: white;
+}
+
+section.initial .wrap_down{
+    font-size: 16px;
+    font-weight: 700;
+}
+
+section.initial + *{
+    z-index: 1;
+    color: white;
+    background-color: white;
+    display:inline-block;
+    position: absolute;
+    min-width: 1200px;
+    width: 100%;
+    left: 0;
+    top: 100%;
+
+    color: #3c3c3c;
+    text-align: center;
+}
+section.contents>.wrap{
+    display: inline-block;
+    width: 1000px;
+    padding: 20px 0px 20px 0px;
+    text-align: left;
+}
+
+.miniMenuWrapper .searchGame{
+    font-size: 16px;
+    transition-duration: 0.5s;
+    transition-property: width;
+    transform: translateY(20px);
+    float: right;
+    display: inline-block;
+    width: 64px;
+    height: 30px;
+    overflow: hidden;
+}
+.miniMenuWrapper .searchGame:hover{
+    width: 250px;
+}
+section.contents .description{
+    margin-top: 20px;
+    margin-bottom: 5px;
+    text-align: left;
+}
+.description .title{
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 600;
+    color: #3c3c3c;
+    transform: translateY(-5px);
+}
+.description .explain{
+    font-size: 15px;   
+    color: #646464;
+}
+
+.games{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    flex-wrap: wrap;
+}
+.moreGamesWrapper{
+    padding: 30px;
+    text-align: center;
+}
+.moreGamesBtn{
+    padding: 5px 30px 5px 30px;
+    background-color: #333333;
+    color: white;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+.gameDetailWrapper_container{
+    position: fixed;
+    background: #000000DD;
+
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-width: 1000px;
+    height: 100%;
+}
+.gameDetailWrapper_container .gameDetailWrapper{
+    width: 1000px;
+
+}
+.gameDetailWrapper_container .gameDetailWrapper .menus{
+    display: inline-block;
+    width: 100%;
+    text-align: right;
+    transform: translateY(-20px);
+}
+.gameDetailWrapper_container .gameDetailWrapper .menus li{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 100%;
+    background-color: #CCCCCC;
+    margin-left: 15px;
+}
+.gameDetailWrapper_container .gameDetailWrapper .menus li img{
+    transform: translate(-10px, 10px);
+    width: 30px;
+    height: 30px;
+}
+.gameDetailWrapper_container .gameDetailWrapper .gameDetailContents{
+    border-bottom: 4px solid #e71469;
+    display: inline-block;
+    width: 100%;
+    height: 394px;
+}
+.titleAndScore{
+    display:inline-block;
+    width: 70.1%;
+    height: 54.59px;
+    background-color: #000000EE;
+    color: white;
+    font-size: 20px;
+    z-index: 10001;
+    padding-top: 10px;
+    padding-left: 15px;
+    transform: translate(-150.5px, -394.5px);
+    text-align: left;
+
+    overflow: hidden;
+}
+.gameDetailWrapper_container .gameDetailWrapper .gameDetailContents .gameDetailVideo{
+    width: 70%;
+    height: 100%;
+    float: left;
+    z-index: 10000;
+}
+.gameDetailWrapper_container .gameDetailWrapper .gameDetailContents .gameDetailInfos{
+    display: inline-block;
+    width: 30%;
+    height: 100%;
+    background-color: white;
+
+    color: black;
+}
+
+.gameDetailInfos .tabs{
+    display: flex;
+    height: 14%;
+}
+.gameDetailInfos .tabs li{
+    flex: 1;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #aaaaaa;
+    align-items: center;
+    cursor: pointer;
+    color: white;
+    font-weight: 600;
+    font-size: 15px;
+
+    border: 1px solid #333333;
+}
+.gameDetailInfos .tabs .selected{
+    background-color: #3c3c3c;
+}
+.gameDetailInfos .contents{
+    display: inline-block;
+    width: 100%;
+    height: 75%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 25px;
+    box-sizing: border-box;
+}
+.gameDetailContents .gameDetailComments{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 11%;
+    transform: translateY(-5px);
+    background-color: #aaaaaa;
+    color: white;
+}

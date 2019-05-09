@@ -1,0 +1,135 @@
+
+
+.popupBackground{
+    position: fixed;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: 99998;
+    background-color: #000000e8;
+    
+    justify-content: center;
+    align-items: center;
+
+    animation-name: fadeIn;
+    animation-duration: 0.3s;
+}
+.popupWrapper{
+    animation: 0.3s alternate scaleUp;
+    display: inline-block;
+    min-width: 900px;
+    width: 900px;
+    border-radius: 8px;
+}
+.popupWrapper .popupTitle{
+    border-top: 4px solid #e71469;
+    border-radius: 8px 8px 0 0;
+    background-color: #e7e7e7;
+    padding: 10px;
+    color: black;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: left;
+
+    display: inline-block;
+    width: 100%;
+    height: 50px;
+}
+.popupWrapper .popupTitle #closePopup{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    float: right;
+    background-image: url('../res/x.png');
+    background-size: 100% 100%;
+    cursor: pointer;
+    transform: translateY(5px);
+}
+.popupWrapper .popupContents{
+    padding: 4px;
+    overflow-y: auto;
+    
+    display: inline-block;
+    width: 100%;
+    background-color: white;
+    text-align: left;
+    max-height: 500px;
+}
+.popupWrapper > .roundBottom{
+    border-radius: 0 0 8px 8px;
+}
+.popupWrapper .popupContents .content{
+    border-bottom: 1px solid #e7e7e7;
+    display: inline-block;
+    width: 100%;
+    height: 110px;
+    padding: 10px;
+    cursor: pointer;
+}
+.popupWrapper .popupContents .content>img{
+    float: left;
+    width: 160px;
+    height: 90px;
+}
+.popupWrapper .popupContents .content>.description{
+    margin-left: 30px;
+    float: left;
+
+    transform: translateY(30px);
+    font-weight: 600;
+}
+.popupWrapper .popupContents .content>.scores{
+    transform: translateY(17px);
+}
+.popupWrapper .popupContents .content>.description>*{
+    width: 100%;
+    font-weight: 500;
+    font-size: 20px;
+}
+.popupWrapper .popupContents .content>.description>.title{
+    text-overflow: ellipsis;
+    font-weight: 600;
+}
+.popupWrapper .popupContents .content>.description>.score{
+    color: #e71469;
+}
+.popupContents .estimateGameWrapper, .popupContents .introChangeWrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    text-align: center;
+    flex-direction: column;
+    height: 100%;
+}
+.popupContents .introChangeWrapper #introInput{
+    font-size: 23px;
+    padding: 10px;
+    width: 80%;
+    height: 60%;
+    animation: glare 1s infinite;
+}
+.popupContents .introChangeWrapper #introInput:focus{
+    border: 2px solid #e71469;
+}
+.popupWrapper>.buttons{
+    border-radius: 0 0 8px 8px;
+    transform: translateY(-5px);
+    background-color: #e71469;
+}
+.popupWrapper>.buttons .button{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    padding: 8px
+}
+
+
+/* game list style in popup */
+.popupWrapper .floatingScore{
+    transform: translate(103px, -350px)!important;
+}

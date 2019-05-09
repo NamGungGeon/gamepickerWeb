@@ -1,0 +1,209 @@
+
+
+section.initial{
+    z-index: 10;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+    color: white;
+    background-color: black;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display:inline-block;
+    position: absolute;
+    
+    height: 100%;
+    min-width: 1200px;
+    width: 100%;
+    left: 0;
+    top: 0;
+    text-align: center;
+}
+section.contents{
+    z-index: 1;
+    color: white;
+    background-color: transparent;
+    display:inline-block;
+    position: absolute;
+    min-width: 1200px;
+    width: 100%;
+    left: 0;
+    top: 105%;
+
+    color: #3c3c3c;
+    text-align: center;
+}
+
+
+
+section.initial{
+    height: 500px;
+    background-size: 100% 100%;
+    background-image: url('../res/pexels-photo-248797.jpeg');
+}
+section.initial + *{
+    top: 500px;
+    z-index: 10000;
+}
+
+.overviews{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+}
+.overviews .profileImageWrap{
+    display: inline-block;
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    cursor: pointer;
+}
+.overviews .profileImageWrap img{
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    transform: translateY(-75px);
+    background-color: white;
+}
+.overviews .texts{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: black;
+    transform: translateY(-50px);
+}
+
+.overviews .texts> *{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.overviews .texts> *:nth-child(1){
+    border-right: 1px solid #3C3C3C87;
+}
+#nickname{
+    font-size: 25px;
+    font-weight: 700;
+}
+#changeNicknameBtn{
+    transform: translateY(5px);
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    cursor: pointer;
+}
+.overviews .texts .tip{
+    margin: 20px 0 20px 0;
+}
+.overviews .texts .activityHistories .button{
+    display: inline-block;
+    width: 32%;
+    cursor: pointer;
+}
+.overviews .texts .activityHistories .button .icon{
+    display: inline-block;
+    width: 50%;
+    height: 50%;
+}
+.overviews .texts .activityHistories .button .icon img{
+    width: 40%;
+    height: 40%;
+    margin: 5%;
+}
+.overviews .texts .activityHistories .button .icon .number{
+    display: inline-block;
+    transform: translateY(-10px);
+    font-size: 20px;
+}
+
+.analyzeOptions{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.analyzeOptions .option{
+    margin: 20px;
+    display: inline-block;
+    width: 300px;
+    height: 370px;
+    background-color: white;
+    display: inline-block;
+    text-align: center;
+
+    padding: 40px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+
+    transition-duration: 1s;
+    transition-property: background;
+}
+
+.analyzeOptions .option:hover{
+    background-color: #33333311;
+    cursor: pointer;
+}
+.analyzeOptions .option .title{
+    font-size: 18px;
+}
+.analyzeOptions .option .highlight{
+    font-size: 22px;
+    border-radius: 10px;
+    color: white;
+    margin: 0 35px 0 35px;
+}
+.analyzeOptions .cloud .highlight{
+    background-color: royalblue;
+}
+.analyzeOptions .pie .highlight{
+    background-color: #e71469;
+}
+.analyzeOptions .option img{
+    width: 200px;
+    height: 200px;
+}
+.title{
+    font-weight: 700;
+}
+
+.myPostTable {
+    border-top: 5px solid #e71469;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.myPostTable *{
+    cursor: default;
+}
+.myPostTable td, .myPostTable th {
+    border: 1px solid #58595b;
+    padding: 8px;
+    text-align: center;
+    text-overflow: ellipsis;
+}
+.myPostTable .no{
+    width: 10%;
+    border-left: none;
+}
+.myPostTable .titles{
+    cursor: pointer;
+}
+.myPostTable .date{
+    width: 15%;
+}
+.myPostTable .view{
+    width: 10%;
+    border-right: none;
+}
+
+.myPostTable th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: #eeeeee;
+}
+
+.description{
+    text-align: center;
+}
+.description > p{
+    display: inline;
+}

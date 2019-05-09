@@ -1,0 +1,160 @@
+body{
+    background-color: #f1f1f1;
+}
+.contents{
+    top: 0;
+    z-index: 10000;
+    background-color: #f1f1f1;
+    height: 100%;
+    width: 100%;
+    min-width: 1200px;
+    text-align: center;
+}
+
+.contents >.wrap{
+    text-align: center;
+    display: inline-block;
+    width: 1000px;
+}
+.contents> .wrap > .explain{
+    margin-top: 60px;
+}
+.contents> .wrap > .explain > p{
+    font-size: 18px;
+}
+.contents> .wrap > .explain > .title{
+    color: #e61469;
+    font-size: 28px;
+    font-weight: 600;
+}
+.contents> .wrap > .description,.contents> .wrap > .description .explain{
+    padding-top: 70px;
+    margin-top: 0;
+}
+.contents> .wrap > .description> .title{
+    font-weight: 700;
+}
+.contents > .wrap img{
+    width: 160px;
+    height: 160px;
+}
+.justSquare{
+    display: inline-block;
+    width: 5px;
+    height: 20px;
+    background-color: #e71469;
+}
+.inputBoxWrapper .explain{
+    text-align: left;
+    margin-bottom: 5px;
+}
+.inputBoxWrapper .explain > .main,.sub{
+    display: inline-block;
+    width: 50%;
+}
+.inputBoxWrapper .explain .main{
+    font-size: 25px;
+    font-weight: 600;
+}
+.inputBoxWrapper .explain .main .justSquare{
+    height: 25px;
+    transform: translateY(4px);
+}
+.inputBoxWrapper .explain .sub{
+    font-size: 15px;
+    float: right;
+    text-align: right;
+    transform: translateY(10px);
+}
+
+.inputBoxWrapper .explain .sub .justSquare{
+    height: 20px;
+    transform: translateY(6px);
+}
+.inputBox{
+    border-top: 2px solid #333333;
+    border-bottom: 2px solid #333333;
+}
+.inputBox >div{
+    display:inline-block;
+    height: 72.5px;
+    width: 100%;
+    padding: 15px;
+    padding-left: 60px;
+    border-bottom: 1px solid #cacaca;
+    text-align: left;
+}
+.inputBox >div >input, .duplicationCheckBtn{
+    display: inline-block;
+    width: 40%;
+    height: 40px;
+    font-size: 14px;
+    padding: 4px;
+    transform: translateY(0);
+}
+.inputBox >div:nth-child(5){
+    padding-top: 25px;
+}
+.inputBox >div >input[type="radio"]{
+    width: 20px;
+    height: 20px;
+}
+.inputBox >div >select{
+    display: inline-block;
+    width: 10%;
+    height: 40px;
+    font-size: 14px;
+    padding: 4px;
+    transform: translateY(0);    
+    text-align: center;
+}
+.duplicationCheckBtn{
+    background-color: #333333;
+    color: white;
+    border: none;
+    width: 15%;
+    cursor: pointer;
+    font-size: 16px;
+}
+.inputBox >div >.justSquare{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-right: 20px;
+}
+.inputBox >div >.explain{
+    display: inline-block;
+    width: 150px;
+    font-size: 18px;
+}
+.terms{
+    text-align: left;
+}
+.terms .justSquare{
+    transform: translateY(5px);
+}
+.terms .title{
+    font-size: 18px;
+    font-weight: 600;
+}
+.terms p{
+    display: inline-block;
+    width: 100%;
+    height: 300px;
+    overflow:scroll;
+    overflow-x: hidden;
+    background-color: #dfdfdf;
+    border: 2px solid #c1c1c1;
+    padding: 25px;
+
+    margin-bottom: 20px
+}
+
+.terms .isAgrees{
+    text-align: center;
+}
+
+.buttons{
+    border-top: 1px solid #c1c1c1;
+    padding: 25px;
+}
