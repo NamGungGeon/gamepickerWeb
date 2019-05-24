@@ -249,18 +249,19 @@ const deleteElementFromArray= (element, array)=>{
 
 //외부 이미지 링크 확인
 const checkCanLoad= (url, listener)=>{
-    axios.get(url).then((response)=>{
-        const status= response.status;
-        if(checkStatus(response)){
-            listener(true);
-        }else{
-            throw(status);
-        }
-    })
-    .catch((e)=>{
-        print(e);
-        listener(false, e);
-    });
+    listener(true);
+    // axios.get(url).then((response)=>{
+    //     const status= response.status;
+    //     if(checkStatus(response)){
+    //         listener(true);
+    //     }else{
+    //         throw(status);
+    //     }
+    // })
+    // .catch((e)=>{
+    //     print(e);
+    //     listener(false, e);
+    // });
 }
 
 const deving= ()=>{
