@@ -63,7 +63,7 @@ const readySubcomment= (id)=> {
         <div class="commentFactory subFactory">
             <textarea id="subInputs" autofocus 
             ${token? 'placeholder="여기에 대댓글을 입력하세요 (100자 이하)"': 'placeholder="로그인 한 사용자만 댓글 작성이 가능합니다" disabled'}/>
-            <button id="submitSubComment" onclick="submitSubComment(${id})">대댓글 작성</button>
+            <button id="submitSubComment" onclick="submitSubComment(${id})">작성</button>
         </div>
     `);
 };
@@ -204,6 +204,7 @@ const buildPost= (post)=>{
     //set information of this post
     const info= getBoardInfo(post);
     boardInfo= info;
+    saved= post;
 
     //build
     const tags=`
@@ -275,7 +276,7 @@ const buildPost= (post)=>{
                         <div class="commentFactory">
                             <textarea id="commentInputs" autofocus 
                             ${token? 'placeholder="여기에 댓글을 입력하세요 (100자 이하)"': 'placeholder="로그인 한 사용자만 댓글 작성이 가능합니다" disabled'}/>
-                            <button id="submitComment" onclick="makeComments()">댓글 작성</button>
+                            <button id="submitComment" onclick="makeComments()">작성</button>
                         </div>
                         <div class="comments">
 

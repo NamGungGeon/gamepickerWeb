@@ -178,16 +178,13 @@ section.contents>.wrap{
     font-size: 16px;
     transition-duration: 0.5s;
     transition-property: width;
-    transform: translateY(20px);
     float: right;
     display: inline-block;
     width: 64px;
     height: 30px;
     overflow: hidden;
 }
-.miniMenuWrapper .searchGame:hover{
-    width: 250px;
-}
+
 section.contents .description{
     margin-top: 20px;
     margin-bottom: 5px;

@@ -1,15 +1,12 @@
 
 
 <style>
-        
     header{
         padding: 21px 0 21px 0;
         z-index: 100;
-        position: absolute;
         left: 0;
+        position: absolute;
     }
-
-
     .logo{
         text-align: left;
     }
@@ -46,10 +43,103 @@
     .headerMenu li a:hover{
         color: #e71469!important
     }
+
+    .desktop{
+        display: inline-block;
+    }
+    .mobile{
+        display: none;
+    }
+
+    nav{
+        position: fixed;
+        z-index: 9998;
+        top: 0;
+        right: 0;
+        display: none;
+        width: 100%;
+        height: 100%;
+        background-color: #000000AA;
+        text-align: right;
+    }
+    nav> #navSection{
+        z-index: 9999;
+        animation: menuOn 0.3s ease;
+        display: inline-block;
+        width: 40%;
+        height: 100%;
+        background-color: #e71469;
+    }
+    nav .headerMenu li{
+        float: none;
+    }
+    nav .headerMenu li>a{
+        border-bottom: 1px solid #e9e9e9;
+        display: inline-block;
+        margin: 0.3rem;
+        padding: 0.7rem;
+        width: 100%;
+    }
+
+    @media(max-width: 450px){
+        .desktop{
+            display: none;
+        }
+        .mobile{
+            display: inline-block;
+        }
+
+        .guideLine>.headerMenu{
+            display: none;
+        }
+        header{
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 0.7rem 0.5rem;
+        }
+
+        .logo{
+            text-align: left;
+        }
+        .logo svg{
+            fill: #e71469 !important;
+            width: 20px;
+            height: 20px;
+            float: left;
+            margin-right: 0.5rem;
+        }
+        .logo .logoText>img{
+            transform: translateY(2.5px);
+            height: 15px;
+        }
+
+        #menuOpen{
+            width: 23px; height: 23px;
+            float: right;
+            cursor: pointer;
+        }
+
+    }
+    @media(min_width: 451px){
+        nav{
+            display: none;
+        }
+    }
 </style>
 
+<nav>
+    <div id="navSection">
+        <ul class="headerMenu">
+            <li><a href="./game.php">게임추천</a></li>
+            <li><a href="./community.php">커뮤니티</a></li>        
+        </ul>
+    </div>
+</nav>
 <header class="guideWrap">
     <div class="guideLine">
+        <img class="mobile" id="menuOpen" src="./res/menu.png">
+        </img>
         <ul class="headerMenu">
             <li><a href="./game.php">게임추천</a></li>
             <li><a href="./community.php">커뮤니티</a></li>
@@ -65,10 +155,23 @@
 
 
 <script>
-    const ___headerMenu= $(".headerMenu");
+    const __headerMenu= $(".headerMenu");
     if(loginCheck()){
-        ___headerMenu.append(`<li><a href="./mypage.php">마이페이지</a></li><li><a href="./logout.php">로그아웃</a></li>`);
+        __headerMenu.append(`<li><a href="./mypage.php">마이페이지</a></li><li><a href="./logout.php">로그아웃</a></li>`);
     }else{
-        ___headerMenu.append(`<li><a href='./login.php?back=${window.location.href}'>로그인</a></li>`);
+        __headerMenu.append(`<li><a href='./login.php?back=${window.location.href}'>로그인</a></li>`);
     }
+
+
+    //menu click
+    $("#menuOpen").click((e)=>{
+        $("nav").css('display', 'inline-block')
+                .css('animation', 'fadeIn 0.5s ease');
+    });
+    $("#navSection").click((e)=>{
+        e.stopPropagation();
+    })
+    $("nav").click(()=>{
+        $("nav").css('display', 'none');
+    });
 </script>

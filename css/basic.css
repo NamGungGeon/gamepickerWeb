@@ -186,3 +186,19 @@ input, textarea{
     text-align: left;
 }
 
+/* mobile */
+@media(max-width: 450px){
+    .guideLine{
+        width: 100%;
+        min-width: 0;
+    }
+    .guideWrap{
+        width: 100%;
+        min-width: 0;
+    }
+
+    .toastWrapper{
+        bottom: 10px;
+        right: 20px;
+    }
+}

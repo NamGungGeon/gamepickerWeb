@@ -31,8 +31,8 @@
 
 <!-- lib -->
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script src="./js/jquery-3.4.0.min.js"></script>
-<script src="./js/moment.js"></script>
+<script src="./js/lib/jquery-3.4.0.min.js"></script>
+<script src="./js/lib/moment.js"></script>
 <script src="./js/lib.js"></script>
 <script src="./js/gamepickerServerApi.js"></script>
 <script>

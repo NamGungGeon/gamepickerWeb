@@ -18,8 +18,9 @@
 .popupWrapper{
     animation: 0.3s alternate scaleUp;
     display: inline-block;
-    min-width: 900px;
-    width: 900px;
+    max-width: 900px;
+    max-height: 100%;
+    width: 95%;
     border-radius: 8px;
 }
 .popupWrapper .popupTitle{
@@ -132,4 +133,11 @@
 /* game list style in popup */
 .popupWrapper .floatingScore{
     transform: translate(103px, -350px)!important;
+}
+
+
+
+/* mobile */
+@media(max-width: 450px){
+
 }

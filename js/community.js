@@ -105,22 +105,22 @@ const renderPost= (posts, target, isNotice)=>{
     const tags= posts.map((p)=>{
         return `
             <div class="post" onclick="window.location='./post.php?pid=${p.id}${isNotice? '&isNotice=true': ''}'">
-                <div class="mInfo">
+                <div class="mInfo" style="${isNotice? 'width: 100%; max-width: 100%;': ''}">
                     <p class="titles">${p.title} 
                     ${isNotice? 
                         '': 
                         p.comment_count==0? '': `<span style='color: orange'>[${p.comment_count}]</span>`}
                     </p>
+                    <span class="date">
+                        ${convertTime(p.created_at)}
+                    </span>
                     <p class="nickname">${isNotice? '관리자': p.name}
-                        <span style="float:right">
-                            ${convertTime(p.created_at)}
-                        </span>
                     </p>
                 </div>
                 ${
                     isNotice? ''
                     :`
-                    <ul class="sinfo">
+                    <ul class="sInfo">
                         <li class="recommandNum"><img src='./res/good.png'/>&nbsp;${p.recommends}</li>
                         <li class="viewNum"><img src='./res/eye.png'/>&nbsp;${p.views}</li>
                     </ul>

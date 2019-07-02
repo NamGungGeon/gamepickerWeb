@@ -29,9 +29,7 @@ section.initial{
 }
 
 section.contents{
-    top: 70px;
     background-size: 100% auto;
-    position: relative;
     z-index: 10000;
     background-color: #f1f1f1;
     background-repeat: no-repeat;
@@ -42,7 +40,7 @@ section.contents>.wrap{
     border-radius: 8px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
     margin: 100px 0 50px 0;
-    padding: 10px 70px 10px 70px;
+    padding: 30px;
     min-height: 800px;
 }
 section.contents>.wrap>*{
@@ -50,21 +48,21 @@ section.contents>.wrap>*{
 }
 
 section.contents>.wrap>.desc>#gtitle{
-    font-size: 28px;
+    font-size: 1.3rem;
     font-weight: 600;
 }
 section.contents>.wrap>.desc>#gplatform{
-    font-size: 13px;
+    font-size: 1rem;
     font-style: italic;
     color: #a6a6a6;
 }
 section.contents>.wrap .gameVideo{
-    width: 90%;
-    height: 435.4px;
+    width: 100%;
+    height: 475px;
 }
 
 .subtitle{
-    font-size: 22px;
+    font-size: 1.1rem;
     font-weight: 600;
     margin-bottom: 20px;
 }
@@ -79,7 +77,7 @@ section.contents>.wrap .gameVideo{
     border: 1px solid #e9e9e9;
     background-color: white;
     margin: 15px;
-
+    width: 95px; height: 85px;
     transition-property: background-color;
     transition-duration: 0.4s;
     
@@ -99,7 +97,7 @@ section.contents>.wrap .gameVideo{
 }
 .options > .option> .explain{
     transform: translateY(12px);
-    font-size: 14px;
+    font-size: 0.7rem;
 }
 
 
@@ -122,7 +120,7 @@ section.contents>.wrap .gameVideo{
 
 #reviews> .content> .review> .userName{
     margin: 5px 0 5px 0;
-    font-size: 12px;
+    font-size: 1rem;
     color: #666666;
 }
 .popupContents > .reviewWrapper{
@@ -138,14 +136,14 @@ section.contents>.wrap .gameVideo{
 }
 .popupContents > .reviewWrapper> .userName{
     margin: 5px 0 5px 0;
-    font-size: 12px;
+    font-size: 1rem;
     color: #666666;
     transform: translateY(30px);
     width: 77%;
 }
 .popupContents > .reviewWrapper> .infos{
     text-align: right;
-    font-size: 15px;
+    font-size: 1.1rem;
 }
 .popupContents > .reviewWrapper> .infos> span{
     cursor: pointer;
@@ -165,11 +163,53 @@ section.contents>.wrap .gameVideo{
 #commentInput{
     box-sizing: border-box;
     width: 100%; height: 200px;
-    font-size: 15px;
+    font-size: 1.1rem;
     padding: 10px;
     animation: glare 1s infinite;
 }
 footer{
     margin: 0;
     transform: translateY(0);
+}
+
+
+
+@media(max-width: 450px){
+    section.contents>.wrap{
+        padding: 0.5rem;
+        margin-top: 150px;
+    }
+            
+    section.contents>.wrap .gameVideo{
+        height: 250px;
+    }
+    .options > .option{
+        display:inline-block;
+        padding: 5px;
+        width: 75px; height: 68px;
+        cursor: pointer;
+        border: 1px solid #e9e9e9;
+        background-color: white;
+        margin: 5px;
+
+        transition-property: background-color;
+        transition-duration: 0.4s;
+        
+        border-radius: 10px;
+        text-align: center;
+    }
+        
+    .options > .option> img{
+        margin: 5px;
+        margin-bottom: 5px;
+        width: 23px; height: 23px;
+    }
+    .options > .option> .explain{
+        transform: translateY(12px);
+        font-size: 0.8rem;
+    }
+    .summary{
+        overflow: hidden;
+    }
+
 }

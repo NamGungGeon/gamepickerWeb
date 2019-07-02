@@ -1,6 +1,10 @@
 
 header{
+    position: fixed;
+    z-index: 10003;
+    top: 0;
     background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
 }
 header *{
     color: black!important;
@@ -17,7 +21,6 @@ header > .wrap{
 .headerMenu li a:hover{
     color: #e71469!important;
 }
-
 
 
 
@@ -225,4 +228,11 @@ hr{
 }
 .comments .controller .imgBtn{
     transform: translateY(-28px);
+}
+
+
+@media(max-width: 450px){
+    section.contents{
+        margin-top: 0;
+    }
 }

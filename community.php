@@ -109,7 +109,6 @@
                 <div class="description leftBorder">
                     뉴스
                 </div>
-                <br/>
                 <div class="postList">
                 </div>
             </div>

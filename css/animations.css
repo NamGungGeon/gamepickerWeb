@@ -51,3 +51,20 @@
         transform: rotate(3deg);
     }
 }
+
+@keyframes menuOn{
+    from{
+        transform: translateX(600px);
+    }
+    to{
+        transform: translateX(0);
+    }
+}
+@keyframes menuOff{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(600px);
+    }
+}

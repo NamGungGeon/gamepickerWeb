@@ -15,7 +15,7 @@
     <?php include "./components/nav.php"?>
 
     <!-- the number of section is not only 1-->
-    <section class="initial">
+    <section class="initial guideWrap">
         <div class="slogun">
             <p class="wrap">
                 세상의 모든 게임을 내 손 안에, 게임피커
@@ -133,8 +133,8 @@
 
             </div>
     </section>
-    <section class="contents">
-        <div class="wrap">
+    <section class="contents guideWrap">
+        <div class="wrap guideline">
             <div class="miniMenuWrapper">
                 <span class="searchGame btn" id="searchGameBtn" onclick="openSearchGame()">
                     <img class="icon" src="./res/search.png" alt="검색"/>

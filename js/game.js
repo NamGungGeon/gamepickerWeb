@@ -194,11 +194,12 @@ const renderPage= (game)=>{
         </div>
         <br/>
         <!-- Summary -->
-        <div class="summary">
+        <div class="summary" id="gameSummary">
             <div class="subtitle">
                 <span class='justSquare'></span>게임설명
             </div>
-            ${game.summary.replace('\n', '<br/>')}
+            
+            ${game.summary.replace(/\n/g, '<br/>').replace(/\r/g, '<br/>')}
         </div>
         <br/>
         <!-- ScoreInfo -->
@@ -267,6 +268,7 @@ const renderPage= (game)=>{
             </div>
         </div>
     `);
+
     // Draw graph
     const ctx = document.getElementById('analyze').getContext('2d');
     const chart = new Chart(ctx, {

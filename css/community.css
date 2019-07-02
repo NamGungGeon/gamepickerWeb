@@ -1,7 +1,10 @@
 
 header{
-    position: relative;
+    position: fixed;
+    z-index: 10003;
+    top: 0;
     background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
 }
 header *{
     color: black!important;
@@ -23,9 +26,7 @@ header > .wrap{
 
 section.communityQuickMenus{
     z-index: 100;
-    position: sticky!important;
     margin-top: 70px;
-    top: 0px;
     background-color: #e71469;
     background-image: none;
     padding: 8px 0 8px 0;
@@ -121,7 +122,7 @@ section.communityQuickMenus .quickBtn .list *{
 
 
 
-.content>.postList>.post>.mInfo{
+.post>.mInfo{
     display: inline-block;
     text-overflow: ellipsis;
     width: 95%;
@@ -132,30 +133,34 @@ section.communityQuickMenus .quickBtn .list *{
     width:100%;
 }
 .mInfo>.titles{
-    font-size: 14px;
+    font-size: 0.9rem;
+    text-overflow: ellipsis;
     margin-bottom: 8px;
 }
 .mInfo>.nickname{
-    font-size: 12px;
+    font-size: 0.8rem;
     color: #5e5e5e;
+}
+.mInfo>.date{
+    color: #5e5e5e;
+    font-size: 0.8rem;
+    float:right;
 }
 
 
 
-
-
-.post>.sinfo{
+.post>.sInfo{
     display:inline-block;
     width:5%;
     float:right;
-    font-size: 12px;
+    font-size: 0.8rem;
 }
-.sinfo img{
+.sInfo img{
     transform: translateY(3px);
     height: 15px;
 }
 
-.sinfo>.recommandNum{
+.sInfo>.recommandNum{
     color: #e71469;
 }
 .content .options{
@@ -186,4 +191,36 @@ section.communityQuickMenus .quickBtn .list *{
 }
 .polaroid{
     height: 265px!important;
+}
+
+
+
+@media(max-width: 450px){
+
+    section.communityQuickMenus{
+        margin-top: 45px;
+    }
+    .post>.mInfo{
+        width:inherit!important;
+        max-width: 300px;
+        overflow: hidden;
+    }
+    .post>.mInfo>.date{
+        float:none;
+        display: none;
+    }
+    .post>.sInfo{
+        width:inherit;
+        min-width: 50px;
+    }
+
+}
+
+@media(max-width: 350px){
+    .post>.mInfo{
+        width:inherit!important;
+        max-width: 240px;
+        overflow: hidden;
+    }
+
 }

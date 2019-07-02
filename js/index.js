@@ -337,19 +337,6 @@ const loadMoreGames= (lim)=>{
     });
 };
 
-const setMiniMenusEffect= ()=>{
-    const searchBtn= $("#searchGameBtn");
-    searchBtn.mouseover(()=>{
-        searchBtn.html(`
-            좋아하는 게임을 찾아보세요!
-        `);
-    }).mouseout(()=>{
-        searchBtn.html(`
-            <img class="icon" src="./res/search.png" alt="검색"/>
-        `);
-    });
-}
-
 const openSearchGame= ()=>{
     buildPopup('게임 찾기', 
         `<input type="text" id="gameNameInput" class="customInputStyle" 
@@ -400,5 +387,4 @@ const searchGame= ()=>{
 $(document).ready(()=>{
     gameListStoreTarget= $(".games");
     loadMyFollows();
-    setMiniMenusEffect();
 });
