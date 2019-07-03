@@ -61,9 +61,15 @@ const readySubcomment= (id)=> {
     }
     $("#comment_"+ id).after(`    
         <div class="commentFactory subFactory">
+            <span class="submark">ㄴ</span>
             <textarea id="subInputs" autofocus 
             ${token? 'placeholder="여기에 대댓글을 입력하세요 (100자 이하)"': 'placeholder="로그인 한 사용자만 댓글 작성이 가능합니다" disabled'}/>
-            <button id="submitSubComment" onclick="submitSubComment(${id})">작성</button>
+            <div style="text-align: right;">
+                <button class="btn" id="submitSubComment" onclick="submitSubComment(${id})">
+                    답글 작성
+                </button>
+            </div>
+            <br/>
         </div>
     `);
 };
@@ -91,14 +97,14 @@ const submitSubComment= (id)=>{
         if(response.status== "204"){
             //end
             $(".subFactory").remove();
-            makeToast(`대댓글 작성 완료!`);
+            makeToast(`답글 작성 완료!`);
             //reload
             loadComments();
         }else{
             throw(response.status);
         }
     }).catch(e=>{
-        makeToast(`대댓글 작성에 실패했습니다. 다시 시도하세요.`);
+        makeToast(`답글 작성에 실패했습니다. 다시 시도하세요.`);
         offLoading();
     });
 };
@@ -262,12 +268,18 @@ const buildPost= (post)=>{
                         </div>
                         <br/>
                         <div class="controlCenter">
-                            <span class='btn' onclick="window.location='./community.php${boardInfo.gId? '?'+ boardInfo.gId: ''}'">글목록</span>
-                            <span class='btn' onclick="openReportPopup()">신고</span>
+                            <span class='imgBtn' onclick="window.location='./community.php${boardInfo.gId? '?'+ boardInfo.gId: ''}'">
+                                <img src="./res/menu_white.png"/>
+                            </span>
+                            <span class='imgBtn' onclick="openReportPopup()"><img src="./res/report_white"/></span>
                             ${
                                 post.user_id== uid?
-                                `<span class='btn' onclick="window.location= './correct.php?pid=${pid}'">수정</span>
-                                <span class='btn buzz' onclick="confirmDelete()">삭제</span>`
+                                `<span class='imgBtn' onclick="window.location= './correct.php?pid=${pid}'">
+                                    <img src="./res/refresh_white.png"/>
+                                </span>
+                                <span class='imgBtn buzz' onclick="confirmDelete()">
+                                    <img src="./res/x_white.png"/>
+                                </span>`
                                 :''
                             }
                         </div>
@@ -276,7 +288,11 @@ const buildPost= (post)=>{
                         <div class="commentFactory">
                             <textarea id="commentInputs" autofocus 
                             ${token? 'placeholder="여기에 댓글을 입력하세요 (100자 이하)"': 'placeholder="로그인 한 사용자만 댓글 작성이 가능합니다" disabled'}/>
-                            <button id="submitComment" onclick="makeComments()">작성</button>
+                            ${token? `
+                                <button class="btn" id="submitComment" onclick="makeComments()">
+                                    댓글 작성
+                                </button>                            
+                            `: ''}
                         </div>
                         <div class="comments">
 

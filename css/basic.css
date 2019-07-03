@@ -95,7 +95,7 @@ input, textarea{
 .buzz:hover{
     animation: 0.15s infinite buzz;
 }
-.imgBtn{
+.imgBtn, .imgBtn-inv{
     border-radius: 4px;
     cursor: pointer;
     background-color: #e71469;
@@ -103,17 +103,33 @@ input, textarea{
     color: white;
     display: inline-block;
     text-align: center;
-    padding: 5px;
+    padding: 5px 8px;
     font-size: 15px;
 
     transition-property: background-color;
     transition-duration: 0.5s;
 }
+
+.svg{
+    width: 16px; height: 16px;
+}
+.svg.white path{
+    fill: white;
+}
+.imgBtn-inv{
+    background-color: white;
+    border: 1.5px solid #e71469;
+    
+}
+.svg.pink path{
+    fill: #e71469;
+}
 .btn:hover, .imgBtn:hover{
     background-color: #c60358;
 }
 
-.imgBtn > img{
+.imgBtn > img, .imgBtn-inv > img{
+    width: 16px; height: 16px;
     transform: translateY(2px);
 }
 .btn-inv{
@@ -133,7 +149,7 @@ input, textarea{
 .customInputStyle{
     background-color: transparent;
     border: none;
-    border-bottom: 3px solid #898989;
+    border-bottom: 1px solid #898989;
     padding: 8px;
     font-size: 16px;
     
@@ -186,15 +202,28 @@ input, textarea{
     text-align: left;
 }
 
+.desktop{
+    display: inline-block;
+}
+.mobile{
+    display: none;
+}
 /* mobile */
 @media(max-width: 450px){
+    .desktop{
+        display: none;
+    }
+    .mobile{
+        display: inline-block;
+    }
+
     .guideLine{
-        width: 100%;
-        min-width: 0;
+        width: 100%!important;
+        min-width: 0!important;
     }
     .guideWrap{
-        width: 100%;
-        min-width: 0;
+        width: 100%!important;
+        min-width: 0!important;
     }
 
     .toastWrapper{

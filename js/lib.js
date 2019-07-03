@@ -111,7 +111,7 @@ const convertTime= (time)=>{
     const converted= moment(time.slice(0, time.length-3), "YYYY-MM-DD HH:mm").add(9, 'h');
     const relative= converted.fromNow();
 
-    return `${relative} (${converted.format('YYYY-MM-DD hh:mm')})`;
+    return `${relative}<span class="desktop">(${converted.format('YYYY-MM-DD hh:mm')})</span>`;
 }
 const needLoginMsg= ()=>{
     makeToast(`로그인이 필요한 기능입니다`);
@@ -141,7 +141,9 @@ const buildPopup= (title, bodyContent, bottomBtn)=>{
                 ${title}
             </p>
             <div class="popupContents ${!!bottomBtn? '': 'roundBottom'}">
-                ${bodyContent}
+                <div class="scrollable">
+                    ${bodyContent}
+                </div>
             </div>
             ${
                 !!bottomBtn?

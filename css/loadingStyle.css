@@ -1,7 +1,7 @@
 
 
 #loading{
-    background-color: #00000088;
+    background-color: rgba(0,0,0,0.7);
     position: fixed;
     z-index: 99998;
     display: inline-block;

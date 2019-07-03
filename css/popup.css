@@ -7,7 +7,7 @@
     height: 100%;
     top: 0;
     z-index: 99998;
-    background-color: #000000e8;
+    background-color: rgba(0,0,0,0.7);
     
     justify-content: center;
     align-items: center;
@@ -20,45 +20,43 @@
     display: inline-block;
     max-width: 900px;
     max-height: 100%;
-    width: 95%;
-    border-radius: 8px;
+    width: 98%;
+    border: 4px solid #e71469;
+
 }
 .popupWrapper .popupTitle{
-    border-top: 4px solid #e71469;
-    border-radius: 8px 8px 0 0;
-    background-color: #e7e7e7;
-    padding: 10px;
-    color: black;
-    font-size: 20px;
+    background-color: #e71469;
+    padding: 0.8rem;
+    color: white;
+    font-size: 1.2rem;
     font-weight: 700;
     text-align: left;
 
     display: inline-block;
     width: 100%;
-    height: 50px;
 }
 .popupWrapper .popupTitle #closePopup{
     display: inline-block;
-    width: 18px;
-    height: 18px;
+    width: 20px;height: 20px;
     float: right;
-    background-image: url('../res/x.png');
+    background-image: url('../res/x_white.png');
     background-size: 100% 100%;
     cursor: pointer;
-    transform: translateY(5px);
 }
+
 .popupWrapper .popupContents{
-    padding: 4px;
-    overflow-y: auto;
-    
+    padding: 1rem;
     display: inline-block;
     width: 100%;
     background-color: white;
     text-align: left;
-    max-height: 500px;
+    min-height: 300px;
+    max-height: 600px;
 }
-.popupWrapper > .roundBottom{
-    border-radius: 0 0 8px 8px;
+
+.popupWrapper .popupContents .scrollable{
+    overflow: auto;
+    max-height: 500px;
 }
 .popupWrapper .popupContents .content{
     border-bottom: 1px solid #e7e7e7;
@@ -115,18 +113,17 @@
     border: 2px solid #e71469;
 }
 .popupWrapper>.buttons{
-    border-radius: 0 0 8px 8px;
-    transform: translateY(-5px);
     background-color: #e71469;
 }
 .popupWrapper>.buttons .button{
     display: inline-block;
     width: 100%;
     height: 100%;
-    font-size: 18px;
+    padding: 0.8rem;
     color: white;
+    font-size: 1.2rem;
+    font-weight: 700;
     cursor: pointer;
-    padding: 8px
 }
 
 
@@ -140,4 +137,7 @@
 /* mobile */
 @media(max-width: 450px){
 
+    .popupWrapper .popupContents{
+        max-height: 550px;
+    }
 }

@@ -16,28 +16,9 @@ section.initial{
     left: 0;
     top: 0;
     text-align: center;
-}
-section.contents{
-    z-index: 1;
-    color: white;
-    background-color: white;
-    display:inline-block;
-    position: absolute;
-    min-width: 1200px;
-    width: 100%;
-    left: 0;
-    top: 105%;
-
-    color: #3c3c3c;
-    text-align: center;
-}
-
-
-
-section.initial{
-    text-align: center;
     background-image: url('../res/mainbackg.jpg');
 }
+
 section.initial > .slogun{
     font-weight: 600;
     color: white;
@@ -51,7 +32,7 @@ section.initial >.slogun .wrap{
     font-size: 20px;
     text-align: left;
 }
-section.initial   .wrap{
+section.initial  .wrap{
     display: inline-block;
     width: 100%;
     max-width: 1000px;
@@ -140,7 +121,7 @@ section.initial  .scrollGuide{
 .installInfo> .bigbtn:hover{
     background-color: #e71469;
 }
-.installInfo> .bigbtn >svg{
+.installInfo> .bigbtn >img{
     margin-right: 7px;
     width: 15px;
     height: 15px;
@@ -153,7 +134,8 @@ section.initial .wrap_down{
     font-weight: 700;
 }
 
-section.initial + *{
+
+section.contents{
     z-index: 1;
     color: white;
     background-color: white;
@@ -168,21 +150,13 @@ section.initial + *{
     text-align: center;
 }
 section.contents>.wrap{
-    display: inline-block;
-    width: 1000px;
     padding: 20px 0px 20px 0px;
     text-align: left;
 }
 
-.miniMenuWrapper .searchGame{
-    font-size: 16px;
-    transition-duration: 0.5s;
-    transition-property: width;
+.miniMenuWrapper{
+    transform: translateY(30px);
     float: right;
-    display: inline-block;
-    width: 64px;
-    height: 30px;
-    overflow: hidden;
 }
 
 section.contents .description{
@@ -232,7 +206,6 @@ section.contents .description{
     justify-content: center;
     align-items: center;
     width: 100%;
-    min-width: 1000px;
     height: 100%;
 }
 .gameDetailWrapper_container .gameDetailWrapper{
@@ -335,4 +308,45 @@ section.contents .description{
     transform: translateY(-5px);
     background-color: #aaaaaa;
     color: white;
+}
+
+
+
+/* mobile */
+@media(max-width: 450px){
+    section.initial{
+        position: initial;
+        margin-top: 45px;
+        height: 100px;
+        padding: 0.5rem;
+    }
+    
+    section.initial *{
+        position: inherit!important;
+    }
+    section.initial .screenshots{
+        display: none;
+    }
+    section.initial .slogun{
+        top: 0;
+        position: inherit;
+    }
+    section.initial .slogun .wrap{
+        position: inherit;
+    }
+    section.initial .scrollGuide{
+        display: none;
+    }
+    section.initial .installInfo > *{
+        padding: 0.5rem 0.8rem;
+        transform: translateY(0);
+    }
+
+        
+    section.contents{
+        position: initial;
+    }
+    section.contents .wrap{
+        padding: 0.5rem;        
+    }
 }

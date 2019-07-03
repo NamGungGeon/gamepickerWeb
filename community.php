@@ -21,13 +21,13 @@
             </div>
             <div class="quickBtn">
                 <div class="searcher" onclick="openSearchGame()">
-                    <div class="title  btn-inv">
-                        게임 이름으로 검색
+                    <div class="title  imgBtn-inv">
+                        <img src="./res/search.svg" class="svg pink"/>
                     </div>
                 </div>
                 <div class="basic">
-                    <div class="title  btn-inv">
-                        기본
+                    <div class="title  imgBtn-inv">
+                        <img src="./res/menu_pink.png"/>
                     </div>
                     <div class= "list">
                         <div>
@@ -69,8 +69,8 @@
                 </div>
                 -->
                 <div class="favors">
-                    <div class="title  btn-inv">
-                        즐겨찾기 목록
+                    <div class="title  imgBtn-inv">
+                        <img src="./res/star.svg" class="svg pink"/>
                     </div>
                     <div class= "list">
                         
@@ -99,9 +99,15 @@
                 </div>
                 <br/>
                 <div class="options">
-                    <button onclick="loadPosts(postQueryBuild())" class="moreLoadBtn btn">더보기</button>
-                    <button onclick="window.location= `./write.php${getUrlParams().gId? `?gId=${getUrlParams().gId}`:''}`" class="btn">글쓰기</button>
-                    <button onclick="searchPosts()" class="btn">검색</button>
+                    <button onclick="loadPosts(postQueryBuild())" class="moreLoadBtn imgBtn">
+                        <img src="./res/more_white.png"/>
+                    </button>
+                    <button onclick="window.location= `./write.php${getUrlParams().gId? `?gId=${getUrlParams().gId}`:''}`" class="imgBtn">
+                        <img src="./res/write_white.png"/>
+                    </button>
+                    <button onclick="searchPosts()" class="imgBtn">
+                        <img src="./res/search.png"/>
+                    </button>
                 </div>
             </div>
             

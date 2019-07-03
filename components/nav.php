@@ -44,22 +44,15 @@
         color: #e71469!important
     }
 
-    .desktop{
-        display: inline-block;
-    }
-    .mobile{
-        display: none;
-    }
-
     nav{
         position: fixed;
-        z-index: 9998;
+        z-index: 10004;
         top: 0;
         right: 0;
         display: none;
         width: 100%;
         height: 100%;
-        background-color: #000000AA;
+        background-color: rgba(0,0,0,0.7);
         text-align: right;
     }
     nav> #navSection{
@@ -82,12 +75,6 @@
     }
 
     @media(max-width: 450px){
-        .desktop{
-            display: none;
-        }
-        .mobile{
-            display: inline-block;
-        }
 
         .guideLine>.headerMenu{
             display: none;
@@ -97,7 +84,26 @@
             top: 0;
             left: 0;
             padding: 0.7rem 0.5rem;
+            background-color: white;
+            z-index: 10003;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
         }
+        header *{
+            color: black!important;
+        }
+        header .cls-1{
+            fill: #e71469;
+        }
+        header .logoText{
+            color: #e71469!important;
+        }
+        header > .wrap{
+            padding: 0;
+        }
+        .headerMenu li a:hover{
+            color: #e71469!important;
+        }
+
 
         .logo{
             text-align: left;
@@ -138,7 +144,7 @@
 </nav>
 <header class="guideWrap">
     <div class="guideLine">
-        <img class="mobile" id="menuOpen" src="./res/menu.png">
+        <img class="mobile" id="menuOpen" src="./res/menu_pink.png">
         </img>
         <ul class="headerMenu">
             <li><a href="./game.php">게임추천</a></li>
@@ -158,8 +164,10 @@
     const __headerMenu= $(".headerMenu");
     if(loginCheck()){
         __headerMenu.append(`<li><a href="./mypage.php">마이페이지</a></li><li><a href="./logout.php">로그아웃</a></li>`);
+        __headerMenu.append(`<li><a href='http://official.gamepicker.co.kr'>고객센터</a></li>`);
     }else{
         __headerMenu.append(`<li><a href='./login.php?back=${window.location.href}'>로그인</a></li>`);
+        __headerMenu.append(`<li><a href='http://official.gamepicker.co.kr'>고객센터</a></li>`);
     }
 
 

@@ -9,6 +9,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
 <meta charset="utf-8"/>
 <link rel="shortcut icon" href="./res/favicon.png" type="image/x-icon">
+<meta name="theme-color" content="#e71469">
+<meta name="apple-mobile-web-app-status-bar-style" content="#e71469">
 
 <!-- font -->
 <link href="https://fonts.googleapis.com/css?family=Anton|Nanum+Gothic|Noto+Sans+KR" rel="stylesheet">
@@ -19,6 +21,7 @@
 <link rel="stylesheet" type="text/css" media="screen" href="./css/loadingStyle.css" />
 <link rel="stylesheet" type="text/css" media="screen" href="./css/basic.css" />
 <link rel="stylesheet" type="text/css" media="screen" href="./css/popup.css" />
+
 
 <!-- Adsense -->
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -40,3 +43,4 @@
     const token= "<?php echo $token ?>";
     const uid= "<?php echo $uid ?>";
 </script>
+<script src="./js/ui.js"></script>

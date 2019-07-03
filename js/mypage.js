@@ -91,7 +91,7 @@ const openEstimatedList= ()=>{
         ${
             scores.map((value)=>{
                 return`
-                    <div class="content" onclick="window.location='./game.php?gId=${value.game_id}'">
+                    <div class="content" onclick="window.location='./game.php?gId=${value.id}'">
                         <img src="${value.images.length!== 0? value.images[0]: './res/sorry.png'}" alt="">
                         <div class="description scores">
                             <p class="title">${value.title}</p>

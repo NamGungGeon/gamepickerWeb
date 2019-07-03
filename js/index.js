@@ -272,11 +272,11 @@ const buildPolaroid= (game, parent)=>{
         <div class="polaroid">
             <div class="thumbnails" id="game_${game.id}" onclick="window.location='./game.php?gId=${game.id}'">
                 <img src="${game.images && game.images[0]? '': "./res/sorry.png"}" alt="게임 썸네일" style="width:100%">
-                <p class="gameName">${game.title}</p>
+                <p class="gameName">${game.title.length>30? game.title.slice(0,27)+'...': game.title}</p>
             </div>
             <div class="texts">
                 <p class="platform">플랫폼 : ${
-                    game.platforms? game.platforms.join(', '): '정보가 준비중입니다'
+                    game.platforms? game.platforms.join(', '): '정보를 준비중입니다'
                 }</p>
                 <p class="score">
                     ${
@@ -319,7 +319,9 @@ const buildPolaroid= (game, parent)=>{
 }
 
 const loadMoreGames= (lim)=>{
+    onLoading();
     api.loadGames(lim, currentGameIdx, (isSuccess, data)=>{
+        offLoading();
         if(isSuccess){
             currentGameIdx+= 3;
 

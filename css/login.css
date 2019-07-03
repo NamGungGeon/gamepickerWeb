@@ -11,19 +11,16 @@ body{
     top: 0;
     z-index: 10000;
     background-color: #f1f1f1;
-    width: 100%;
-    min-width: 1000px;
 }
 
 .contents >.wrap{
-    display: inline-block;
-    width: 1000px;
     text-align: center;
 }
 .contents> .wrap > a >.description{
     margin-top: 0;
     display: inline-block;
-    width: 35%;
+    min-width: 300px;
+    width:35%;
     height: auto;
     margin-bottom: 50px;
 }
@@ -39,20 +36,22 @@ body{
 .loginBox input{
     border: 2px solid #cacaca;
     display: inline-block;
-    font-size: 20px;
-    width: 50%;
+    font-size: 1rem;
+    width:40%;
+    min-width: 350px;
     height: 50px;
     padding: 16px;
 
     margin-bottom: 16px;
 }
 #startLoginBtn{
-    width: 50%;
+    min-width: 350px;
+    width: 40%;
     height: 50px;
     background-color: #e61469;
     border: none;
     margin-top: 15px;
-    font-size: 25px;
+    font-size: 1rem;
     color: white;
     cursor: pointer;
 }
@@ -64,7 +63,8 @@ body{
     cursor: pointer;
     text-align: left;
     display: inline-block;
-    width: 50%;
+    min-width: 350px;
+    width:40%;
 }
 .options .rememberToken img{
     width: 20px;
@@ -74,25 +74,23 @@ body{
 .options .rememberToken .explain{
     display: inline-block;
     transform: translateY(-10px);
+    font-size: 0.8rem;
 }
 .options .accounts{
     padding-top: 10px;
     border-top: 1px solid #cacaca; 
     display: inline-block;
-    width: 50%;
+    min-width: 350px;
+    width:40%;
 }
 .options .accounts a{
     color: black;
     text-decoration: none;
-    border-right: 1px solid #cacaca;
 }
-.options .accounts a:nth-last-child(1){
-    border-right: none;
-}
-
 .options .accounts a p{
-    display: inline-block;
-    width: 30%;
+    float: left;
+    width: 33%;
+    font-size: 0.8rem;
 }
 footer{
     height: 0;

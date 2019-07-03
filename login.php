@@ -8,21 +8,18 @@
     <script src="./js/login.js"></script>
 </head>
 <body>
-    <section class="contents">
-        <div class="wrap">
+    <section class="contents guideWrap">
+        <div class="wrap guideLine">
             <a href="./">
                 <div class="description">
                     <img src="./res/logoImage.png" alt="로고와아이콘">
                 </div>
             </a>
             <div class="loginBox">
-                <input type="email" placeholder="이메일 입력해주세용~!" id="id"/>
+                <input type="email" placeholder="이메일을 입력해주세요" id="id"/>
                 <br/>
-                <input type="password" placeholder="비밀번호!!" id="pw"/>
-                <br/>
-                <button id="startLoginBtn">로그인</button>
+                <input type="password" placeholder="비밀번호를 입력해주세요" id="pw" style="transform: translateX(-2.5px)"/>
             </div>
-            <br/>
             <div class="options">
                 <div class="rememberToken">
                     <img src="./res/checkbox_nofill.png" alt="">
@@ -30,6 +27,9 @@
                         &nbsp;로그인 상태 유지
                     </span>
                 </div>
+                <br/>
+                <button id="startLoginBtn">로그인</button>
+                <br/>
                 <br/>
                 <div class="accounts">
                     <a href="./register.php">

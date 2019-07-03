@@ -5,7 +5,7 @@
         min-width: 1200px;
         height: 300px;
         background-image: url('../res/footer_background.jpg');
-        background-size: 100% auto;
+        background-size: 100% 100%;
         background-repeat: no-repeat;
         color: white;
     }
@@ -19,7 +19,7 @@
         background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 50%, rgba(0,0,0,0.8) 100%); /* FF3.6-15 */
         background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.8) 50%,rgba(0,0,0,0.8) 100%); /* Chrome10-25,Safari5.1-6 */
         background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.8) 50%,rgba(0,0,0,0.8) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 ); /* IE6-9 */
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 ); /* IE6-9 */
 
     }
     footer .wrap{

@@ -22,13 +22,14 @@ const loadPost= ()=>{
     api.loadPost(false, pid, (success, data)=>{
         offLoading();
         if(success){
-            saved= data;
             if(data.user_id!= uid){
                 //내가 작성하지 않은 글은 수정할 수 없다
                 alert('유효하지 않은 접근입니다');
                 window.location= './community.php';
                 return;                
             }
+            saved= data;
+            setPrevPostInfo(data);
         }else{
             alert('게시글을 수정할 수 없습니다');
             window.location= './community.php';
@@ -60,7 +61,7 @@ const submitPost= ()=>{
         return;
     }
 
-    api.updatePost(pid, (success)=>{
+    api.updatePost(pid, built, (success)=>{
         offLoading();
         if(success){
             alert('게시글이 수정되었습니다');

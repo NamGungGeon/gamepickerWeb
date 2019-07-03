@@ -285,7 +285,7 @@ const controlFavorites= (targetId, currentState)=>{
             //UI update
             if(wanted) favoriteList.push({id: targetId, title: getBoardName()});
             else favoriteList= deleteElementFromArray({id: targetId, title: getBoardName()}, favoriteList);
-            initQuickMenu();
+            //initQuickMenu();
         }
     });
 }   
@@ -324,11 +324,11 @@ $(document).ready(()=>{
                 });
                 print(games);
                 print(favoriteList);
-                initQuickMenu();            
+                //initQuickMenu();            
             }
         });
     }else{
         offLoading();
-        initQuickMenu();
+        //initQuickMenu();
     }
 });

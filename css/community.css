@@ -29,7 +29,7 @@ section.communityQuickMenus{
     margin-top: 70px;
     background-color: #e71469;
     background-image: none;
-    padding: 8px 0 8px 0;
+    padding: 0.5rem 0.8rem;
 }
 
 section.communityQuickMenus > .guideLine > div{
@@ -97,6 +97,7 @@ section.communityQuickMenus .quickBtn .list *{
     margin: 50px 0 50px 0;
     padding: 15px;
     background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.25);
 }
 .content>.description{
     font-size: 17px;
@@ -125,9 +126,8 @@ section.communityQuickMenus .quickBtn .list *{
 .post>.mInfo{
     display: inline-block;
     text-overflow: ellipsis;
-    width: 95%;
+    width: 93%;
     text-align: left;
-    padding-right: 8px;
 }
 #notices .mInfo{
     width:100%;
@@ -174,7 +174,6 @@ section.communityQuickMenus .quickBtn .list *{
     border: none;
     color: white;
     display: inline-block;
-    margin-left: 10px;
     font-size: 15px;
 }
 
