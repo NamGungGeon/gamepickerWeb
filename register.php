@@ -7,8 +7,8 @@
     <script src="./js/register.js"></script>
 </head>
 <body>
-    <section class="contents">
-        <div class="wrap">
+    <section class="contents guideWrap">
+        <div class="wrap guideLine">
             <div class="explain">
                 <p class="title">
                     회원가입
@@ -26,57 +26,58 @@
                         회원정보
                     </div>
                     <div class="sub">
-                        <span class="justSquare"></span>
-                        &nbsp;필수 항목이므로 빠짐 없이 기입해주세요
+                        필수 항목이므로 빠짐 없이 기입해주세요
                     </div>
                 </div>
                 <br/>
                 <div class="inputBox">
                     <div>
-                        <span class="justSquare"></span>
-                        <span class="explain">이메일</span>
+                        
+                        <span class="explain"><span class="justSquare"></span>이메일</span>
                         <input type="text" id="emailInput">
                         &nbsp;
-                        <button class="duplicationCheckBtn" id="emailCheckBtn">중복확인</button>
+                        <button class="duplicationCheckBtn" id="emailCheckBtn">
+                            <img src="./res/check.svg" class="svg white"/>
+                        </button>
                     </div>
                     <div>
-                        <span class="justSquare"></span>
-                        <span class="explain">비밀번호</span>
+                        
+                        <span class="explain"><span class="justSquare"></span>비밀번호</span>
                         <input type="password" id="pwInput" placeholder='4자 이상 입력해주세요'>
                     </div>
                     <div>
-                        <span class="justSquare"></span>
-                        <span class="explain">비밀번호 확인</span>
+                        
+                        <span class="explain"><span class="justSquare"></span>비밀번호 확인</span>
                         <input type="password" id="pwInputCheck" placeholder='비밀번호와 동일하게 입력해주세요'>
                     </div>
                     <div>
-                        <span class="justSquare"></span>
-                        <span class="explain">생년월일</span>
+                        
+                        <span class="explain"><span class="justSquare"></span>생년월일</span>
                         <select id="yearInput">
                             <option value="default">년도</option>
                         </select>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <select id="monthInput">
                             <option value="default">월</option>
                         </select>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <select id="dayInput">
                             <option value="default">일</option>
                         </select>
                     </div>
                     <div>
-                        <span class="justSquare"></span>
-                        <span class="explain">성별</span>
+                        
+                        <span class="explain"><span class="justSquare"></span>성별</span>
                         <input type="radio" checked name="gender" value="man" id="gender_man">&nbsp;남
                         &nbsp;&nbsp;&nbsp;&nbsp;
                         <input type="radio" name="gender" value="woman">&nbsp;여
                     </div>
                     <div>
-                        <span class="justSquare"></span>
-                        <span class="explain">닉네임</span>
+                        
+                        <span class="explain"><span class="justSquare"></span>닉네임</span>
                         <input type="text" id="nicknameInput">
                         &nbsp;
-                        <button class="duplicationCheckBtn" id="nicknameCheckBtn">중복확인</button>
+                        <button class="duplicationCheckBtn" id="nicknameCheckBtn">
+                            <img src="./res/check.svg" class="svg white"/>
+                        </button>
                     </div>
                 </div>
             </div>

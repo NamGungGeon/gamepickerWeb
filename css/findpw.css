@@ -1,16 +1,11 @@
 body{
     background-color: #f1f1f1;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 .contents{
     top: 0;
     z-index: 10000;
     background-color: #f1f1f1;
+    height: 100%;
     width: 100%;
     min-width: 1200px;
     text-align: center;
@@ -22,28 +17,26 @@ body{
     width: 1000px;
 }
 .contents> .wrap > .explain{
-    margin-top: 120px;
+    margin-top: 60px;
 }
 .contents> .wrap > .explain > p{
-    font-size: 23px;
+    font-size: 18px;
 }
 .contents> .wrap > .explain > .title{
     color: #e61469;
-    font-size: 32px;
+    font-size: 28px;
     font-weight: 600;
 }
 .contents> .wrap > .description,.contents> .wrap > .description .explain{
-    padding-top: 70px;
-    margin-top: 0;
+    padding: 70px 0;
 }
 .contents> .wrap > .description> .title{
     font-weight: 700;
 }
 .contents > .wrap img{
-    width: 160px;
-    height: 160px;
-
-    margin-bottom: 50px;
+    width: 60%;
+    max-width: 300px;
+    height: auto;
 }
 .justSquare{
     display: inline-block;
@@ -53,7 +46,7 @@ body{
 }
 .inputBoxWrapper .explain{
     text-align: left;
-    margin-bottom: 5px;
+    margin-bottom: 16px;
 }
 .inputBoxWrapper .explain > .main,.sub{
     display: inline-block;
@@ -71,7 +64,7 @@ body{
     font-size: 15px;
     float: right;
     text-align: right;
-    transform: translateY(10px);
+    transform: translateY(20px);
 }
 
 .inputBoxWrapper .explain .sub .justSquare{
@@ -91,20 +84,16 @@ body{
     border-bottom: 1px solid #cacaca;
     text-align: center;
 }
-.inputBox >div >*{
-    transform: translateY(-5px);
-}
 .inputBox >div >input, .duplicationCheckBtn{
     display: inline-block;
-    width: 50%;
+    width: 40%;
     height: 40px;
     font-size: 14px;
     padding: 4px;
     transform: translateY(0);
-    text-align: center;
 }
 .inputBox >div:nth-child(5){
-    padding-top: 25px;
+    padding-top: 22px;
 }
 .inputBox >div >input[type="radio"]{
     width: 20px;
@@ -114,12 +103,13 @@ body{
     display: inline-block;
     width: 10%;
     height: 40px;
-    font-size: 20px;
+    font-size: 14px;
+    padding: 4px;
     transform: translateY(0);    
     text-align: center;
+    margin-right: 40px;
 }
 .duplicationCheckBtn{
-    transform: translateY(-5px);
     background-color: #333333;
     color: white;
     border: none;
@@ -127,21 +117,17 @@ body{
     cursor: pointer;
     font-size: 16px;
 }
-#nicknameCheckBtn{
-    transform: translateY(-3px);
-}
-.inputBox >div >.justSquare{
+.inputBox >div .justSquare{
     display: inline-block;
     width: 10px;
-    transform: translateY(3px);
     height: 10px;
     margin-right: 20px;
 }
 .inputBox >div >.explain{
-    transform: translateY(3px);
-    font-size: 16px;
     display: inline-block;
     width: 150px;
+    font-weight: 600;
+    font-size: 16px;
 }
 .terms{
     text-align: left;
@@ -150,7 +136,7 @@ body{
     transform: translateY(5px);
 }
 .terms .title{
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
 }
 .terms p{
@@ -171,6 +157,60 @@ body{
 }
 
 .buttons{
-    border-top: 1px solid #c1c1c1;
     padding: 25px;
+}
+
+
+
+/* mobile */
+@media(max-width: 450px){
+    .guideLine{
+        padding: 4px;
+    }
+    .inputBoxWrapper .explain .sub{
+        width: auto;
+        float: none;
+    }
+    .inputBoxWrapper .explain .sub .justSquare{
+        display: none;
+    }
+    .inputBox >div{
+        height: initial;
+        padding: 8px;
+    }
+    .inputBox >div >.justSquare{
+        margin-right: 4px;
+    }
+    .inputBox >div >.explain{
+        width: 100%;
+        margin-bottom: 8px;
+    }
+    .inputBox >div >input{
+        height: initial;
+        padding: 8px 4px;
+        width: 100%;
+    }
+    .inputBox >div >select{
+        height: initial;
+        width: 70px;
+        margin-right: 10px;
+    }
+    
+    .inputBox >div:nth-child(5){
+        padding-top: 8px;
+    }
+
+    .inputBoxWrapper .explain .sub{
+        transform: translateY(0);
+        margin-bottom: 16px;
+    }
+
+    .duplicationCheckBtn{
+        height: 34px;
+        float: right;
+    }
+
+    .terms p{
+        padding: 8px;;
+    }
 }

@@ -113,15 +113,18 @@ input, textarea{
 .svg{
     width: 16px; height: 16px;
 }
-.svg.white path{
+.svg.white *{
     fill: white;
+}
+.svg.black *{
+    fill: black;
 }
 .imgBtn-inv{
     background-color: white;
     border: 1.5px solid #e71469;
     
 }
-.svg.pink path{
+.svg.pink *{
     fill: #e71469;
 }
 .btn:hover, .imgBtn:hover{
@@ -203,17 +206,21 @@ input, textarea{
 }
 
 .desktop{
+    visibility: visible;
     display: inline-block;
 }
 .mobile{
+    visibility: hidden;
     display: none;
 }
 /* mobile */
 @media(max-width: 450px){
     .desktop{
-        display: none;
+        visibility: hidden;
+        display: none!important;
     }
     .mobile{
+        visibility: visible;
         display: inline-block;
     }
 

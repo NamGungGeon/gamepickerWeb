@@ -113,6 +113,15 @@ const convertTime= (time)=>{
 
     return `${relative}<span class="desktop">(${converted.format('YYYY-MM-DD hh:mm')})</span>`;
 }
+const convertTime_new =(time)=>{
+    const converted= moment(time.slice(0, time.length-3), "YYYY-MM-DD HH:mm").add(9, 'h');
+    const relative= converted.fromNow();
+    return{
+        converted: converted.format('YYYY-MM-DD hh:mm'),
+        relative
+    };
+    
+}
 const needLoginMsg= ()=>{
     makeToast(`로그인이 필요한 기능입니다`);
 }
@@ -268,4 +277,12 @@ const checkCanLoad= (url, listener)=>{
 
 const deving= ()=>{
     makeToast('개발중입니다');
+}
+
+
+const Url= {
+    current: window.location.href,
+    replace: (newUrl)=>{
+        history.pushState({}, null, newUrl);
+    },
 }

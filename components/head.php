@@ -35,6 +35,7 @@
 <!-- lib -->
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="./js/lib/jquery-3.4.0.min.js"></script>
+<script src="./js/lib/jquery.cookie.js"></script>
 <script src="./js/lib/moment.js"></script>
 <script src="./js/lib.js"></script>
 <script src="./js/gamepickerServerApi.js"></script>
@@ -43,4 +44,10 @@
     const token= "<?php echo $token ?>";
     const uid= "<?php echo $uid ?>";
 </script>
+<script src="./js/user.js"></script>
 <script src="./js/ui.js"></script>
+
+<script>
+  //MUST INIT SECTION
+  User.init();
+</script>

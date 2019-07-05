@@ -136,8 +136,14 @@
 
 /* mobile */
 @media(max-width: 450px){
-
     .popupWrapper .popupContents{
         max-height: 550px;
+    }
+
+    .popupWrapper .popupContents .content> .description{
+        float: none;
+        transform: translateX(8px);
+        text-align: left;
+        padding: 4px;
     }
 }

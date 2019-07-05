@@ -7,8 +7,16 @@
     <script src="./js/findpw.js"></script>
 </head>
 <body>
-    <section class="contents">
-        <div class="wrap">
+    <section class="contents guideWrap">
+        <div class="wrap guideLine">
+            <div class="explain">
+                <p class="title">
+                    비밀번호 찾기
+                </p>
+                <p>
+                    이메일을 이용해 비밀번호를 재설정합니다
+                </p>
+            </div>
             <div class="description">
                 <img src="./res/IconWithLogo.png" alt="로고">
             </div>
@@ -18,21 +26,18 @@
                         비밀번호 찾기
                     </div>
                     <div class="sub">
-                        <span class="justSquare"></span>
-                        &nbsp;&nbsp;가입하신 이메일 계정으로 비밀번호 재설정 메일이 발송됩니다.
+                        가입하신 이메일 계정으로 비밀번호 재설정 메일이 발송됩니다.
                     </div>
                 </div>
-                <br/>
                 <div class="inputBox">
                     <div>
-                        <span class="justSquare"></span>
-                        <span class="explain">이메일 주소</span>
+                        
+                        <span class="explain"><span class="justSquare"></span>이메일 주소</span>
                         <input type="email" id="mailInput" placeholder="가입 시 사용하신 이메일을 입력해주세요">
                     </div>
                 </div>
                     
                 <div class="buttons">
-                    <br/>
                     <button id="sendBtn" class='btn'>
                         메일 발송
                     </button>

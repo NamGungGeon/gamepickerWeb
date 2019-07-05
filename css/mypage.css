@@ -8,7 +8,6 @@ section.initial{
     background-size: 100% 100%;
     background-repeat: no-repeat;
     display:inline-block;
-    position: absolute;
     
     height: 100%;
     min-width: 1200px;
@@ -22,7 +21,6 @@ section.contents{
     color: white;
     background-color: transparent;
     display:inline-block;
-    position: absolute;
     min-width: 1200px;
     width: 100%;
     left: 0;
@@ -36,7 +34,7 @@ section.contents{
 
 section.initial{
     height: 500px;
-    background-size: 100% 100%;
+    background-size: 100% auto;
     background-image: url('../res/pexels-photo-248797.jpeg');
 }
 section.initial + *{
@@ -98,6 +96,7 @@ section.initial + *{
 }
 .overviews .texts .activityHistories .button{
     display: inline-block;
+    font-weight: 600;
     width: 32%;
     cursor: pointer;
 }
@@ -107,8 +106,8 @@ section.initial + *{
     height: 50%;
 }
 .overviews .texts .activityHistories .button .icon img{
-    width: 40%;
-    height: 40%;
+    width: 32px;
+    height: 32px;
     margin: 5%;
 }
 .overviews .texts .activityHistories .button .icon .number{
@@ -131,22 +130,25 @@ section.initial + *{
     display: inline-block;
     text-align: center;
 
+    transform: translateY(0);
     padding: 40px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
 
-    transition-duration: 1s;
-    transition-property: background;
+    transition-duration: 0.3s;
+    transition-property: transform, box-shadow;
 }
 
 .analyzeOptions .option:hover{
-    background-color: #33333311;
+    box-shadow: 0 4px 40px 0 rgba(0, 0, 0, 0.4);
+    transform: translateY(-10px);
     cursor: pointer;
 }
 .analyzeOptions .option .title{
     font-size: 18px;
 }
 .analyzeOptions .option .highlight{
-    font-size: 22px;
+    font-size: 18px;
+    padding: 2px;
     border-radius: 10px;
     color: white;
     margin: 0 35px 0 35px;
@@ -186,6 +188,7 @@ section.initial + *{
 }
 .myPostTable .titles{
     cursor: pointer;
+    width: 65%;
 }
 .myPostTable .date{
     width: 15%;
@@ -206,4 +209,73 @@ section.initial + *{
 }
 .description > p{
     display: inline;
+}
+
+table tr{
+    display: table-row!important;
+}
+table td, th{
+    display: table-cell!important;
+}
+
+/* mobile */
+@media(max-width: 450px){
+    section.initial{
+        margin-top: 45.3px;
+        height: 200px;   
+    }
+    .overviews .texts{
+        display: block;
+    }
+    .overviews .texts > *{
+        text-align: left;
+        border: none!important;
+    }
+    .overviews .profileImageWrap img{
+        width: 100px; height: 100px;
+        transform: translateY(-50px);
+    }
+    .overviews .nicknames{
+        text-align: center;
+    }
+    .overviews .texts .activityHistories .button{
+        text-align: center;
+    }
+    .overviews .texts .activityHistories .button .number{
+        display: block;
+    }
+    .analyzeOptions{
+    }
+    .analyzeOptions .option{
+        width: 50%;
+        height: auto;
+        padding: 16px;
+    }
+    .analyzeOptions .option .highlight{
+        font-size: 0.9rem;
+        padding: 4px;
+        margin: 0;
+        margin-top: 4px;
+    }
+    .analyzeOptions .option img{
+        width: 125px; height: 125px;
+    }
+    table tr td{
+        font-size: 1rem;
+    }
+    table td{
+        border: 1px solid #58595b77!important;
+        padding: 8px 4px!important;
+    }
+    table .titles{
+        display: table-cell!important;
+        border-left: none!important;
+        border-right: none!important;
+        text-align: left;
+    }
+    table .titles>.sub{
+        font-size: 0.8rem;
+        color: rgba(0,0,0,0.8);
+    }
+
 }

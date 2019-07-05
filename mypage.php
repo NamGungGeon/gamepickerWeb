@@ -11,11 +11,11 @@
     <!-- Navigation -->
     <?php include_once "./components/nav.php" ?>
     <!-- the number of section is not only 1-->
-    <section class="initial">
-        <div class="wrap">
+    <section class="initial guideWrap">
+        <div class="wrap guideLine">
         </div>
     </section>
-    <section class="contents guideWrapper">
+    <section class="contents guideWrap">
         <div class="guideLine wrap" id="board">
             <!-- This contents will be fullfilled in js -->
             <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>

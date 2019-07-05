@@ -6,6 +6,11 @@ var scores= null;
 var posts= null;
 var favors= null;
 
+var post_limit= getUrlParams().limit? 
+                    (parseInt(getUrlParams().limit)? parseInt(getUrlParams().limit): 10)
+                    : 10;
+var delta_post_limit= 10;
+
 var emptyIntro= '아직 자기소개를 작성하지 않았습니다';
 
 
@@ -118,35 +123,35 @@ const renderPage= ()=>{
                         ${user.name}
                     </span>
                     <img src="./res/pen.png" id="changeNicknameBtn" onclick="changeIntroduction()">    
-                </div>
-                <div class="tip" id="intro">
-                    ${user.introduce? user.introduce: emptyIntro}
+                    <div class="tip" id="intro">
+                        ${user.introduce? user.introduce: emptyIntro}
+                    </div>
                 </div>
                 <div class="activityHistories">
                     <div class="button">
                         <div class="icon" id="favorListBtn" onclick="openFavorList()">
                             <img src="./res/fill_heart.png" alt="">
-                            <span class="number" id="reserveNumber">${favors? favors.length: '0'}</span>
+                            
                         </div>
-                        <p class="explain">찜한 게임</p>
+                        <p class="explain">찜한 게임 <span class="number" id="reserveNumber">(${favors? favors.length: '0'})</span></p>
                     </div>
                     <div class="button">
                         <div class="icon" id="scoreListBtn" onclick="openEstimatedList()">
                             <img src="./res/fill_star.png" alt="">
-                            <span class="number" id="estimateNumber">${scores? scores.length: '0'}</span>
+                            
                         </div>
-                        <p class="explain">평가목록</p>
+                        <p class="explain">평가목록 <span class="number" id="estimateNumber">(${scores? scores.length: '0'})</span></p>
                     </div>
                     <div class="button">
-                        <div class="icon" id="">
+                        <div class="icon" id="" onclick="deving()">
                             <img src="./res/menu.png" alt="">
-                            <span class="number" id="postNumber">1</span>
+                            
                         </div>
-                        <p class="explain">커뮤니티 목록</p>
+                        <p class="explain">커뮤니티 목록 <span class="number" id="postNumber">(1)</span></p>
                     </div>
                 </div>
             </div>
-            <div class="cummunities">
+            <div class="cummunities desktop">
                 <p class="title">
                     커뮤니티 목록(이였던 것)
                 </p>
@@ -183,22 +188,33 @@ const renderPage= ()=>{
         <table class="myPostTable">
             <tbody>
                 <tr>
-                    <th class="no">No.</td>
-                    <th class="titles">Title</td>
-                    <th class="date">Date</td>
-                    <th class="view">View</td>
+                    <th class="no desktop">No.</td>
+                    <th class="titles">
+                        <span class="desktop">Title</span>
+                        <span class="mobile">Post</span>
+                    </td>
+                    <th class="date desktop">Date</td>
+                    <th class="view desktop">View</td>
                 </tr>
                 ${
                     posts?
-                    posts.map((value)=>{
+                    posts.map((value, idx)=>{
+                        if(idx+1 > post_limit)
+                            return;
                         return `<tr  onclick="window.location='./post.php?pid=${value.id}'">
-                            <td class='no'>${value.id}</td>
+                            <td class='no desktop'>${value.id}</td>
                             <td class="titles">${value.title} 
                                 <span style="color: orange">${value.comment_count? `[${value.comment_count}]`: ''}
                                 </span>
+                                <br/>
+                                <div class="mobile sub">
+                                    조회수: ${value.views} &nbsp;&nbsp;&nbsp; 작성일: ${convertTime(value.created_at)}
+                                </div>
                             </td>
-                            <td class="date">${value.created_at.slice(0, 10)}</td>
-                            <td class="view">${value.views}</td>
+                            <td class="date desktop">
+                                <span class="desktop">${convertTime_new(value.created_at).converted}</span>
+                            </td>
+                            <td class="view desktop">${value.views}</td>
                         </tr>`;
                     }).join('')
                     :
@@ -206,12 +222,64 @@ const renderPage= ()=>{
                 }
             </tbody>
         </table>
+        <br/>
+        <div class="postList_options">
+            <span class="imgBtn" onclick="moreLoadPostList()">
+                <img src="./res/more_white.png"/>
+            </span>
+        </div>
     </div>
     <br/><br/><br/><br/><br/>    
     `;
     $("#board").html(contents);
 
     offLoading();
+}
+
+const moreLoadPostList= ()=>{
+    if(posts.length< post_limit){
+        makeToast('더 이상 불러올 포스트가 없습니다');
+        return;
+    }
+    post_limit+= delta_post_limit;
+    Url.replace(`./mypage.php?limit=${post_limit}`);
+
+    const render= `<tbody>
+                <tr>
+                    <th class="no desktop">No.</td>
+                    <th class="titles">
+                        <span class="desktop">Title</span>
+                        <span class="mobile">Post</span>
+                    </td>
+                    <th class="date desktop">Date</td>
+                    <th class="view desktop">View</td>
+                </tr>
+                ${
+                    posts?
+                    posts.map((value, idx)=>{
+                        if(idx+1 > post_limit)
+                            return;
+                        return `<tr  onclick="window.location='./post.php?pid=${value.id}'">
+                            <td class='no desktop'>${value.id}</td>
+                            <td class="titles">${value.title} 
+                                <span style="color: orange">${value.comment_count? `[${value.comment_count}]`: ''}
+                                </span>
+                                <br/>
+                                <div class="mobile sub">
+                                    조회수: ${value.views} &nbsp;&nbsp;&nbsp; 작성일: ${convertTime(value.created_at)}
+                                </div>
+                            </td>
+                            <td class="date desktop">
+                                <span class="desktop">${convertTime_new(value.created_at).converted}</span>
+                            </td>
+                            <td class="view desktop">${value.views}</td>
+                        </tr>`;
+                    }).join('')
+                    :
+                    ''
+                }
+            </tbody>`
+    $("table.myPostTable").html(render);
 }
 $(document).ready(()=>{
     loadData();
