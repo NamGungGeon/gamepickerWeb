@@ -315,6 +315,7 @@ section.contents .description{
 /* mobile */
 @media(max-width: 450px){
     section.initial{
+        display: none;
         position: initial;
         margin-top: 45px;
         height: 100px;
@@ -344,6 +345,7 @@ section.contents .description{
 
         
     section.contents{
+        margin-top: 45px;
         position: initial;
     }
     section.contents .wrap{
