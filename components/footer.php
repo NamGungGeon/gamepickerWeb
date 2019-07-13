@@ -5,7 +5,7 @@
         min-width: 1200px;
         height: 300px;
         background-image: url('../res/footer_background.jpg');
-        background-size: 100% 100%;
+        background-size: 100% auto;
         background-repeat: no-repeat;
         color: white;
     }
@@ -68,6 +68,7 @@
             height: inherit;
             display: block!important;
             min-width: 0;
+            background-size: 100% 100%;
         }
         footer .logo{
             display: none;
