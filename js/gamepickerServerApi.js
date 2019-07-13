@@ -348,9 +348,7 @@ const api= {
             params: query
         }).then(response=>{
             if(checkStatus(response)){
-                const posts= response.data.posts;
-                print(posts);
-                listener(true, posts);
+                listener(true, response.data);
             }else{
                 throw(response.status);
             }
@@ -552,10 +550,6 @@ const api= {
                 makeToast(`${wanted? '즐겨찾기에 성공적으로 추가되었습니다!' : '즐겨찾기에서 성공적으로 제거되었습니다'}`);
                 
                 listener(true);
-                //UI update
-                if(wanted) favoriteList.push({id: targetId, title: getBoardName()});
-                else favoriteList= deleteElementFromArray({id: targetId, title: getBoardName()}, favoriteList);
-                initQuickMenu();
             }else{
                 throw(response.status);
             }
@@ -606,7 +600,7 @@ const api= {
             print(e);
         });
     },
-    reportPost: (pid)=>{
+    reportPost: (pid, listener)=>{
         if(!loginCheck()){
             makeToast('로그인이 필요한 기능입니다');
             return;

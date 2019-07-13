@@ -7,7 +7,7 @@
     
     <link rel="stylesheet" type="text/css" media="screen" href="./css/gameListStyle.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="./css/community.css" />
-    <script src="./js/community.js"></script>
+    <script src="./js/community_refactor.js"></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -16,67 +16,30 @@
     <section class="communityQuickMenus guideWrap">
         <div class="guideLine">
             <div id="communityName">
-                <img src="" alt="" id="isFavor"/>
+                <img alt="" id="isFavor"/>
                 <span id="name"></span>
             </div>
             <div class="quickBtn">
-                <div class="searcher" onclick="openSearchGame()">
-                    <div class="title  imgBtn-inv">
+                <div class="searcher" onclick="Page.Ui.Popup.searchCommunity()">
+                    <div class="title imgBtn-inv">
                         <img src="./res/search.svg" class="svg pink"/>
                     </div>
                 </div>
-                <div class="basic">
-                    <div class="title  imgBtn-inv">
+                <div class="basic" onclick="Page.Ui.Popup.basicCommunity()">
+                    <div class="title imgBtn-inv">
                         <img src="./res/menu_pink.png"/>
                     </div>
-                    <div class= "list">
-                        <div>
-                            <a href="./community.php?gId=-1">
-                                익명게시판
-                            </a>
-                        </div>
-                        <div>
-                            <a href="./community.php?gId=-2">
-                                자유게시판
-                            </a>
-                        </div>
-                        <div>
-                            <a href="./community.php?gId=-3">
-                                새 소식
-                            </a>
-                        </div>
-                        <div>
-                            <a href="./community.php?gId=-4">
-                                이벤트
-                            </a>
-                        </div>
-                        <div>
-                            <a href="./community.php?gId=-5">
-                                위키
-                            </a>
-                        </div>
+                </div>
+                <div class="history">
+                    <div class="title imgBtn-inv" onclick="Page.Ui.Popup.history()">
+                        <img src="./res/history.svg" class="svg pink"/>
                     </div>
                 </div>
-                <!--
-                <div class="currents">
-                    <div class="title btn-inv">
-                        최근 커뮤니티 목록
-                    </div>
-                    <br/>
-                    <div class= "list">
-                        
-                    </div>
-                </div>
-                -->
                 <div class="favors">
-                    <div class="title  imgBtn-inv">
+                    <div class="title imgBtn-inv" onclick="Page.Ui.Popup.bookmarks()">
                         <img src="./res/star.svg" class="svg pink"/>
                     </div>
-                    <div class= "list">
-                        
-                    </div>
                 </div>
-
             </div>
 
         </div>
@@ -99,13 +62,13 @@
                 </div>
                 <br/>
                 <div class="options">
-                    <button onclick="loadPosts(postQueryBuild())" class="moreLoadBtn imgBtn">
+                    <button onclick="Page.Loader.posts()" class="moreLoadBtn imgBtn">
                         <img src="./res/more_white.png"/>
                     </button>
                     <button onclick="window.location= `./write.php${getUrlParams().gId? `?gId=${getUrlParams().gId}`:''}`" class="imgBtn">
                         <img src="./res/write_white.png"/>
                     </button>
-                    <button onclick="searchPosts()" class="imgBtn">
+                    <button onclick="Page.Ui.Popup.searchPost()" class="imgBtn">
                         <img src="./res/search.png"/>
                     </button>
                 </div>

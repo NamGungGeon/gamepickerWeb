@@ -43,7 +43,7 @@ body{
 
     margin-bottom: 16px;
 }
-#startLoginBtn{
+#startLoginBtn, #googleLoginBtn{
     min-width: 350px;
     width: 40%;
     height: 40px;
@@ -53,6 +53,9 @@ body{
     font-size: 1rem;
     color: white;
     cursor: pointer;
+}
+#googleLoginBtn{
+    opacity: 0.8;
 }
 
 .options{

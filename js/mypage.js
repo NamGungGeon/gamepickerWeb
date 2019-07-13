@@ -5,6 +5,7 @@ var user= null;
 var scores= null;
 var posts= null;
 var favors= null;
+var bookmarks= null;
 
 var post_limit= getUrlParams().limit? 
                     (parseInt(getUrlParams().limit)? parseInt(getUrlParams().limit): 10)
@@ -37,6 +38,11 @@ const loadData= async ()=>{
     await api.loadFollows((success, data)=>{
         if(success)
             favors= data;
+    });
+    await api.loadFavorites(uid, (success, data)=>{
+        if(success)
+            bookmarks= data;
+
     });
     renderPage();
 }
@@ -108,6 +114,23 @@ const openEstimatedList= ()=>{
         }
         `);
 }
+const openBookmarks= ()=>{
+    if(!bookmarks || bookmarks.length== 0){
+        makeToast('즐겨찾기에 등록한 커뮤니티가 없습니다');
+        return;
+    }
+    buildPopup('즐겨찾는 커뮤니티',
+        `
+        ${
+            bookmarks.map((value)=>{
+                return `
+                    <div class="content" style="height: initial" onclick="window.location='./community.php?gId=${value.id}'">
+                        <b>${value.title}</b>
+                    </div>`;                
+            }).join('')
+        }
+        `);
+};
 
 const renderPage= ()=>{
 
@@ -143,9 +166,8 @@ const renderPage= ()=>{
                         <p class="explain">평가목록 <span class="number" id="estimateNumber">(${scores? scores.length: '0'})</span></p>
                     </div>
                     <div class="button">
-                        <div class="icon" id="" onclick="deving()">
+                        <div class="icon" id="" onclick="openBookmarks()">
                             <img src="./res/menu.png" alt="">
-                            
                         </div>
                         <p class="explain">커뮤니티 목록 <span class="number" id="postNumber">(1)</span></p>
                     </div>
@@ -153,7 +175,16 @@ const renderPage= ()=>{
             </div>
             <div class="cummunities desktop">
                 <p class="title">
-                    커뮤니티 목록(이였던 것)
+                    최근 방문 커뮤니티
+                    <br/>
+                    <br/>
+                    ${
+                        User.latestCommunity().map((value, idx)=>{
+                            if(idx>= 4)
+                                return;
+                            return `<div style="cursor: pointer; margin: 5px 0" onclick='window.location= ${value.link}'>${value.title}</div>`;
+                        }).join('')
+                    }
                 </p>
             </div>
         </div>

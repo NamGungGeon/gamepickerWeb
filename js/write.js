@@ -1,7 +1,7 @@
 
 var editorData;
 const cid= getUrlParams().gId;
-if(!token || !uid){
+if((!token || !uid)){
     alert('로그인이 필요한 기능입니다');
     window.location= `./login.php?back=${window.location.href}`;
 }
@@ -30,7 +30,7 @@ const valueCheck= ()=>{
     if(cid){ 
         switch(parseInt(cid)){
             case -1:
-                built.category= 'anonymous';
+                built.category= '3';
                 break;
             case -2:
                 built.category= 'free';

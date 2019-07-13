@@ -3,8 +3,8 @@
 <html>
     <head>
         <?php
-            include_once "./components/head.php";
             include_once "./components/utils.php";
+            include_once "./components/head.php";
             $_SESSION['token']= null;
             $_SESSION['uid']= null;
         ?>

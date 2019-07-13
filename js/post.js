@@ -20,7 +20,7 @@ const openReportPopup= ()=>{
                     onLoading();
                     api.reportPost(pid, (success)=>{
                         offLoading();
-                        if(success) closePopup();
+                        closePopup();
                     });
                 }
             });
@@ -271,7 +271,7 @@ const buildPost= (post)=>{
                             <span class='imgBtn' onclick="window.location='./community.php${boardInfo.gId? '?'+ boardInfo.gId: ''}'">
                                 <img src="./res/menu_white.png"/>
                             </span>
-                            <span class='imgBtn' onclick="openReportPopup()"><img src="./res/report_white"/></span>
+                            <span class='imgBtn' onclick="openReportPopup()"><img src="./res/report_white.png"/></span>
                             ${
                                 post.user_id== uid?
                                 `<span class='imgBtn' onclick="window.location= './correct.php?pid=${pid}'">

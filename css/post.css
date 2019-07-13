@@ -53,6 +53,9 @@ section.contents>.guideLine>.content{
     background-color: white;
 }
 
+#board{
+    min-height: 800px;
+}
 hr{
     background-color: #e71469;
     border: none;

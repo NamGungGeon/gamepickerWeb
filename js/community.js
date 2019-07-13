@@ -1,5 +1,5 @@
 
-var postList= [];
+var Page.Data.posts= [];
 var favoriteList= [];
 var currentCommunity= [];
 
@@ -55,13 +55,13 @@ const loadPosts= (query)=>{
     api.loadPosts(query, (success, data)=>{
         offLoading();
         if(success){
-            if(data.length== 0){
-                if(postList.length== 0) makeToast('이 게시판에는 아직 포스트가 없습니다.<br/>첫 게시글의 주인공이 되어보세요!');
+            if(data.posts.length== 0){
+                if(Page.Data.posts.length== 0) makeToast('이 게시판에는 아직 포스트가 없습니다.<br/>첫 게시글의 주인공이 되어보세요!');
                 else makeToast(`더 이상 게시글이 없습니다`);
             }
-            postList= postList.concat(data);
+            Page.Data.posts= Page.Data.posts.concat(data.posts);
             setBoardName(data);
-            renderPost(data, $("#recentPosts .postList"));            
+            renderPost(data.posts, $("#recentPosts .postList"));            
         }
     });
 }
@@ -69,7 +69,7 @@ const loadPosts= (query)=>{
 const postQueryBuild= ()=>{
     const query= {
         limit: loadNum,
-        offset: postList.length,
+        offset: Page.Data.posts.length,
     };
 
     //전체게시판
@@ -133,52 +133,53 @@ const renderPost= (posts, target, isNotice)=>{
 }
 
 const initQuickMenu= ()=>{
-    const currents= $(".communityQuickMenus .currents");
-    const favors= $(".communityQuickMenus .favors");
+    // const currents= $(".communityQuickMenus .currents");
+    // const favors= $(".communityQuickMenus .favors");
 
-    if(loginCheck()){
-        //로그인 되었을 경우에만 즐겨찾기, 최근커뮤니티 사용 가능
-        currents.mouseover(()=>{
-            currents.find(".list").css('display', 'block');
-        }).mouseout(()=>{
-            currents.find(".list").css('display', 'none');
-        });
-        currents.find(".list").html(
-            currentCommunity.map((value)=>{
-              return `<div><a href='${value.link}'>${value.name}</a></div>`;  
-            })
-        );
+    // if(loginCheck()){
+    //     //로그인 되었을 경우에만 즐겨찾기, 최근커뮤니티 사용 가능
+    //     currents.mouseover(()=>{
+    //         currents.find(".list").css('display', 'block');
+    //     }).mouseout(()=>{
+    //         currents.find(".list").css('display', 'none');
+    //     });
+    //     currents.find(".list").html(
+    //         currentCommunity.map((value)=>{
+    //           return `<div><a href='${value.link}'>${value.name}</a></div>`;  
+    //         })
+    //     );
     
-        favors.mouseover(()=>{
-            favors.find('.list').css('display', 'block');
-        }).mouseout(()=>{
-            favors.find('.list').css('display', 'none');
-        });
-        favors.find(".list").html(
-            favoriteList.map((value)=>{
-                return `<div><a href='./community.php?gId=${value.id}'>
-                        ${value.title.length>9? value.title.slice(0,9)+'...': value.title}
-                    </a></div>`;  
-            })
-        );
-    }else{
-        currents.remove();
-        favors.remove();
-    }
+    //     favors.mouseover(()=>{
+    //         favors.find('.list').css('display', 'block');
+    //     }).mouseout(()=>{
+    //         favors.find('.list').css('display', 'none');
+    //     });
+    //     favors.find(".list").html(
+    //         favoriteList.map((value)=>{
+    //             return `<div><a href='./community.php?gId=${value.id}'>
+    //                     ${value.title.length>9? value.title.slice(0,9)+'...': value.title}
+    //                 </a></div>`;  
+    //         })
+    //     );
+    // }else{
+    //     currents.remove();
+    //     favors.remove();
+    // }
 
-    const basics= $(".communityQuickMenus .basic").mouseover(()=>{
-        basics.find('.list').css('display', 'block');
-    }).mouseout(()=>{
-        basics.find('.list').css('display', 'none');
-    });
+    // const basics= $(".communityQuickMenus .basic").mouseover(()=>{
+    //     basics.find('.list').css('display', 'block');
+    // }).mouseout(()=>{
+    //     basics.find('.list').css('display', 'none');
+    // });
 
 
     //기본 게시판에는 즐겨찾기 불가능
-    if(param.gId<0 || !param.gId)
+    if(param.gId<=0 || !param.gId)
         $("#isFavor").css("display", "none");
     else
         $("#isFavor").attr('src', `./res/${isFavorBoard()? '': 'no'}fill_star.png`)
-                    .attr('onclick', `controlFavorites(${param.gId}, ${isFavorBoard()})`);
+                    .attr('onclick', `controlFavorites(${param.gId}, ${isFavorBoard()})`)
+                    .css('display', 'inline-block');
 };
 
 
@@ -324,11 +325,10 @@ $(document).ready(()=>{
                 });
                 print(games);
                 print(favoriteList);
-                //initQuickMenu();            
+                initQuickMenu();            
             }
         });
     }else{
         offLoading();
-        //initQuickMenu();
     }
 });

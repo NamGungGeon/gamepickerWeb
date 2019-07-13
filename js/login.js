@@ -32,12 +32,20 @@ const tryLogin= ()=>{
     const id= $("input#id").val();
     const pw= $("input#pw").val();
 
-    login(id, pw, (token, uid)=>{
-        offLoading();
+    const move= ()=>{
         $("#token").attr("value", token);
         $("#uid").attr("value", uid);
         const form= $("#moveWithTokenForm");
+        offLoading();
         form.submit();
+    }
+
+    login(id, pw, (token, uid)=>{
+        if(isRemember){
+            User.remember(uid, token, move);
+            return;
+        }
+        move();
     }, (e)=>{
         offLoading();
         print(e);

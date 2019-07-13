@@ -41,8 +41,8 @@
 <script src="./js/gamepickerServerApi.js"></script>
 <script>
     // DONT REMOVE THIS SCRIPT!!
-    const token= "<?php echo $token ?>";
-    const uid= "<?php echo $uid ?>";
+    var token= "<?php echo $token ?>";
+    var uid= "<?php echo $uid ?>";
 </script>
 <script src="./js/user.js"></script>
 <script src="./js/ui.js"></script>

@@ -55,6 +55,7 @@ section.contents{
 section.communityQuickMenus #isFavor{
     cursor: pointer;
     transform: translateY(1px);
+    display: none;
     height: 18px;
     margin-right: 5px;
 }
@@ -66,7 +67,8 @@ section.communityQuickMenus #communityName{
     overflow: hidden;
     float: left;
     text-align: left;
-    width: 43%;
+    width: 60%;
+    height: 24px;
 }
 section.communityQuickMenus .quickBtn >*{
     float: right;

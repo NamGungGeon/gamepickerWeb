@@ -30,6 +30,10 @@
                 <br/>
                 <button id="startLoginBtn">로그인</button>
                 <br/>
+                <button id="googleLoginBtn" onclick="deving()">
+                    구글 계정으로 로그인
+                </button>
+                <br/>
                 <br/>
                 <div class="accounts">
                     <a href="./register.php">

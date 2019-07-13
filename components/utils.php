@@ -1,4 +1,7 @@
 <?php
+    session_start();
+
+    
     class Request{
         public static function post($param='', $isEssential=false){
             $value= $_POST[$param];
@@ -32,7 +35,6 @@
         }
     }
 
-    session_start();
     
     $isDev= false;
     if($isDev){
