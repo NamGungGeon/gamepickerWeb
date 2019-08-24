@@ -90,8 +90,8 @@ const closePopup= (uniqueId)=>{
 }
 
 const convertYoutubeUrl= (input)=>{
-    if(input.includes('https://youtu.be/')){
-        const replaced= 'https://www.youtube.com/embed/'+ input.replace('https://youtu.be/', '');
+    if(input.includes('https://youtu.be/') || input.includes('https://www.youtube.com/watch?v=')){
+        const replaced= 'https://www.youtube.com/embed/'+ input.replace('https://youtu.be/', '').replace('https://www.youtube.com/watch?v=', '');
         print(replaced);
         return replaced;
     }
