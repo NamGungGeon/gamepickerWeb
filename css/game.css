@@ -123,40 +123,40 @@ section.contents>.wrap .gameVideo{
     font-size: 1rem;
     color: #666666;
 }
-.popupContents > .reviewWrapper{
+.popupContents .reviewWrapper{
     padding: 10px;
 }
-.popupContents > .reviewWrapper > .reviewBody{
+.popupContents .reviewWrapper > .reviewBody{
     display: inline-block;
     width: 100%;
     height: auto;
 }
-.popupContents > .reviewWrapper *{
+.popupContents .reviewWrapper *{
     text-align: left;
 }
-.popupContents > .reviewWrapper> .userName{
+.popupContents .reviewWrapper> .userName{
     margin: 5px 0 5px 0;
     font-size: 1rem;
     color: #666666;
     transform: translateY(30px);
     width: 77%;
 }
-.popupContents > .reviewWrapper> .infos{
+.popupContents .reviewWrapper> .infos{
     text-align: right;
     font-size: 1.1rem;
 }
-.popupContents > .reviewWrapper> .infos> span{
+.popupContents .reviewWrapper> .infos> span{
     cursor: pointer;
 }
-.popupContents > .reviewWrapper> .infos> span> img{
+.popupContents .reviewWrapper> .infos> span> img{
     width: 15px;
     height: 15px;
 }
-.popupContents > .reviewWrapper> .infos> span> .good{
+.popupContents .reviewWrapper> .infos> span> .good{
     color: #e71469;
 }
 
-.popupContents > .reviewWrapper> .infos> span> .bad{
+.popupContents .reviewWrapper> .infos> span> .bad{
     color: #e71469;
 }
 
